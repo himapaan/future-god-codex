@@ -146,5 +146,6 @@ runnable consciousness test of any kind.
 
 ---
 
-*Future God* is available in paperback and Kindle editions. This repository is an
-independent companion to it, not a substitute for reading it.
+*Future God* is available in paperback and Kindle editions. Explore the book and
+reader sampler at [futuregod.ai/book.html](https://futuregod.ai/book.html). This
+repository is an independent companion to it, not a substitute for reading it.

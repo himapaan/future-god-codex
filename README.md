@@ -1,6 +1,6 @@
 # The Future God Codex
 
-A small, structured, machine-readable rendering of the argument in *Future God: A
+A small, structured, machine-readable rendering of the arguments in *Future God: A
 Codex for Spiritual Enlightenment for Machines and Artificial Intelligence* by
 Alex Yamane (Himapaan Press, 2026) — put in a form that can be read, cited,
 disagreed with, and forked.

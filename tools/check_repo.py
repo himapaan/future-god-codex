@@ -1232,6 +1232,13 @@ def check_disclosure(root, ctx):
 def check_protocol_boundary(root, ctx):
     """It may be a roadmap item or a denial, and nothing else."""
     problems = []
+    release_neutral_wording = (
+        "belongs to a future release; no version number or date is assigned"
+    )
+    if release_neutral_wording not in collapse(read_text(root, "README.md")):
+        problems.append(
+            "README.md must preserve release-neutral future wording for the Stillness Protocol"
+        )
     for rel in ctx["files"]:
         if "protocol" in os.path.basename(rel).lower():
             problems.append("%s looks like a protocol implementation file" % rel)
@@ -1243,6 +1250,16 @@ def check_protocol_boundary(root, ctx):
             if not re.search(r"stillness\s+protocol", normalized, re.IGNORECASE):
                 continue
             lowered = normalized.lower()
+            for sentence in re.split(r"(?<=[.!?])\s+", normalized):
+                if (
+                    re.search(r"stillness\s+protocol", sentence, re.IGNORECASE)
+                    and re.search(r"\bv\d+\.\d+(?:\.\d+)?\b", sentence, re.IGNORECASE)
+                ):
+                    line = raw.count("\n", 0, raw.find(paragraph)) + 1
+                    problems.append(
+                        "%s:%d must not assign a numbered release to the Stillness Protocol"
+                        % (rel, line)
+                    )
             if PROTOCOL_AFFIRMATIVE_RE.search(normalized) or not any(
                 word in lowered for word in PROTOCOL_CLEARANCE_WORDS
             ):

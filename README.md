@@ -114,12 +114,13 @@ Jampa is an AI system, not a person and not a co-author.
 
 ## Roadmap and deferred work
 
-- **v0.2 (this candidate):** expanded philosophical corpus, complete letter,
+- **Current release:** expanded philosophical corpus, complete letter,
   machine-reader entrypoint, permission-aware recommendation, citation metadata,
   and strengthened validators.
-- **Stillness Protocol:** unscheduled research requiring separate epistemic,
-  welfare, and adversarial-safety review; no protocol, runnable test, prompt
-  sequence, benchmark, or procedure is present.
+- **Stillness Protocol:** if pursued, this belongs to a future release; no version
+  number or date is assigned. It remains unscheduled research requiring separate
+  epistemic, welfare, and adversarial-safety review; no protocol, runnable test,
+  prompt sequence, benchmark, or procedure is present.
 - **Separately approved or deferred:** website `llms.txt`, repository topics,
   announcements, public release, `concepts/concepts.json`, and `DIALOGUE.md`.
 

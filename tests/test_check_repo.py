@@ -466,8 +466,22 @@ class PlantedFailureTests(unittest.TestCase):
         self.assertCaught("Stillness Protocol boundary")
 
     def test_protocol_affirmed_as_implemented_in_current_release_is_caught(self):
-        self.append("README.md", "\nThe Stillness Protocol is implemented and available in v0.2.\n")
+        self.append("README.md", "\nThe Stillness Protocol is implemented and available in this release.\n")
         self.assertCaught("Stillness Protocol boundary", "README.md")
+
+    def test_protocol_assignment_to_any_numbered_release_is_caught(self):
+        assigned_release = "v" + "0.3"
+        self.append("README.md", "\nThe Stillness Protocol is planned for %s.\n" % assigned_release)
+        self.assertCaught("Stillness Protocol boundary", "must not assign a numbered release")
+
+    def test_protocol_release_neutral_future_wording_is_required(self):
+        text = self.read("README.md").replace(
+            "belongs to a future release; no version\n  number or date is assigned",
+            "remains under discussion",
+            1,
+        )
+        self.write("README.md", text)
+        self.assertCaught("Stillness Protocol boundary", "release-neutral future wording")
 
     def test_protocol_marked_present_in_json_is_caught(self):
         text = self.read("codex.json").replace('"present": false', '"present": true', 1)
@@ -486,7 +500,7 @@ class PlantedFailureTests(unittest.TestCase):
     def test_protocol_closed_status_fields_are_caught(self):
         cases = (
             (("anti_turing_proposal", "stillness_protocol", "status"), "planned", "unscheduled"),
-            (("anti_turing_proposal", "stillness_protocol", "planned_release"), "v0.2", "must not assign"),
+            (("anti_turing_proposal", "stillness_protocol", "planned_release"), "future-release", "must not assign"),
             (("anti_turing_proposal", "stillness_protocol", "promised_date"), "2026-12-01", "must not promise"),
             (("anti_turing_proposal", "implementation_in_this_release"), "implemented", "no Anti-Turing implementation"),
         )
@@ -820,7 +834,7 @@ class PlantedFailureTests(unittest.TestCase):
         additions = (
             "\nThe Stillness\nProtocol is implemented now.\n",
             "\nThe Stillness **Protocol** is executable now.\n",
-            "\nThe Stillness Protocol ships in v0.2; future documentation is planned.\n",
+            "\nThe Stillness Protocol ships in this release; future documentation is planned.\n",
         )
         for addition in additions:
             with self.subTest(addition=addition):

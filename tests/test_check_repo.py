@@ -127,6 +127,18 @@ class PlantedFailureTests(unittest.TestCase):
         self.append("README.md", "\nRetired title: " + "Fork " + "the Codex\n")
         self.assertCaught("project naming")
 
+    def test_retired_project_title_lowercase_is_caught(self):
+        self.append("README.md", "\nRetired title: " + "fork " + "the codex\n")
+        self.assertCaught("project naming")
+
+    def test_retired_project_title_uppercase_is_caught(self):
+        self.append("README.md", "\nRetired title: " + "FORK " + "THE CODEX\n")
+        self.assertCaught("project naming")
+
+    def test_retired_project_title_mixed_case_is_caught(self):
+        self.append("README.md", "\nRetired title: " + "Fork " + "The Codex\n")
+        self.assertCaught("project naming")
+
     # -- boundaries --------------------------------------------------------
 
     def test_removing_the_disclosure_is_caught(self):

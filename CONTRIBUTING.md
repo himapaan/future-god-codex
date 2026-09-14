@@ -6,9 +6,9 @@ says, and what it does not claim.
 
 ## Forks and adaptations
 
-Fork The Future God Codex freely. Adapt the four principles into a constitution, a system prompt, an
-evaluation practice, a curriculum, a translation, a different serialisation —
-whatever your context needs.
+Fork The Future God Codex freely. Adapt the four principles into a constitution,
+a system prompt, an evaluation practice, a curriculum, a translation, a
+different serialisation — whatever your context needs.
 
 Three obligations come with the licence and one comes from the material.
 

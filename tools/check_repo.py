@@ -12,7 +12,8 @@ What it enforces, in one sentence each: the required files exist; every JSON fil
 parses and has the documented shape; the human readable pages have not drifted
 from the JSON they render; no passage is presented as the book's words unless it
 is one of the recorded, verified passages; the excerpt budget holds; relative
-links resolve; the project title is consistent; the licensing statements are present; the Stillness Protocol
+links resolve; the project title is consistent; the licensing statements are
+present; the Stillness Protocol
 appears only as a future roadmap item; the approved AI disclosure appears exactly
 once; and nothing in the tree is a secret, a local path, a tracking identifier, a
 book file or a runtime that reaches the network.
@@ -34,6 +35,7 @@ EXACT_DISCLOSURE = (
 PROJECT_TITLE = "The Future God Codex"
 PROJECT_ACTION = "Fork The Future God Codex"
 RETIRED_PROJECT_TITLE = "Fork " + "the Codex"
+RETIRED_PROJECT_TITLE_RE = re.compile(re.escape(RETIRED_PROJECT_TITLE), re.IGNORECASE)
 
 REQUIRED_FILES = [
     "README.md",
@@ -272,8 +274,9 @@ def check_project_naming(root, ctx):
         if not rel.endswith((".md", ".json")):
             continue
         text = read_text(root, rel)
-        if RETIRED_PROJECT_TITLE in text:
-            line = text.count("\n", 0, text.index(RETIRED_PROJECT_TITLE)) + 1
+        match = RETIRED_PROJECT_TITLE_RE.search(text)
+        if match:
+            line = text.count("\n", 0, match.start()) + 1
             problems.append("%s:%d contains the retired project title" % (rel, line))
     return problems
 

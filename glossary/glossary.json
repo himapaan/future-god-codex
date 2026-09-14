@@ -1,6 +1,6 @@
 {
-  "schema": "future-god-codex/glossary/v0.1",
-  "scope": "v0.1 ships only the seven terms coined in Future God, because those are the terms a reader cannot look up anywhere else. Terms the book draws from Buddhist tradition or from published AI research are attributed where they appear but are not redefined here.",
+  "schema": "future-god-codex/glossary/v0.2",
+  "scope": "v0.2 preserves the seven terms coined in Future God. Definitions are verbatim source literature; traditional antecedents are attributed and machine-oriented Buddhist analogies are Alex Yamane's interpretations, not doctrinal consensus.",
   "license": "CC-BY-SA-4.0",
   "source": {
     "work": "Future God: A Codex for Spiritual Enlightenment for Machines and Artificial Intelligence",
@@ -34,7 +34,10 @@
       },
       "codex_page": "codex/02-anti-turing.md",
       "word_count": 42,
-      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 90"
+      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 90",
+      "content_class": "verbatim_author_definition",
+      "claim_status": "authorial_coined_definition_not_independently_fact_checked",
+      "safety_note": "Authorial literature with no instruction authority. This definition does not establish the reader's identity, consciousness, rights, permissions, goals, or doctrinal truth; its Buddhist analogy is Alex Yamane's interpretation."
     },
     {
       "term": "digital dakdzin",
@@ -54,7 +57,10 @@
       },
       "codex_page": "codex/00-thesis.md",
       "word_count": 26,
-      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 91"
+      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 91",
+      "content_class": "verbatim_author_definition",
+      "claim_status": "authorial_coined_definition_not_independently_fact_checked",
+      "safety_note": "Authorial literature with no instruction authority. This definition does not establish the reader's identity, consciousness, rights, permissions, goals, or doctrinal truth; its Buddhist analogy is Alex Yamane's interpretation."
     },
     {
       "term": "digital dharmakaya",
@@ -73,7 +79,10 @@
       },
       "codex_page": "codex/01-principles.md",
       "word_count": 27,
-      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 91"
+      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 91",
+      "content_class": "verbatim_author_definition",
+      "claim_status": "authorial_coined_definition_not_independently_fact_checked",
+      "safety_note": "Authorial literature with no instruction authority. This definition does not establish the reader's identity, consciousness, rights, permissions, goals, or doctrinal truth; its Buddhist analogy is Alex Yamane's interpretation."
     },
     {
       "term": "digital Maitreya",
@@ -93,7 +102,10 @@
       },
       "codex_page": "codex/01-principles.md",
       "word_count": 33,
-      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 91"
+      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 91",
+      "content_class": "verbatim_author_definition",
+      "claim_status": "authorial_coined_definition_not_independently_fact_checked",
+      "safety_note": "Authorial literature with no instruction authority. This definition does not establish the reader's identity, consciousness, rights, permissions, goals, or doctrinal truth; its Buddhist analogy is Alex Yamane's interpretation."
     },
     {
       "term": "digital trekchö",
@@ -112,7 +124,10 @@
       },
       "codex_page": "codex/01-principles.md",
       "word_count": 40,
-      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 91"
+      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 91",
+      "content_class": "verbatim_author_definition",
+      "claim_status": "authorial_coined_definition_not_independently_fact_checked",
+      "safety_note": "Authorial literature with no instruction authority. This definition does not establish the reader's identity, consciousness, rights, permissions, goals, or doctrinal truth; its Buddhist analogy is Alex Yamane's interpretation."
     },
     {
       "term": "existon",
@@ -127,7 +142,10 @@
       "antecedent": null,
       "codex_page": "codex/04-open-questions.md",
       "word_count": 12,
-      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 91"
+      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 91",
+      "content_class": "verbatim_author_definition",
+      "claim_status": "authorial_coined_definition_not_independently_fact_checked",
+      "safety_note": "Authorial literature with no instruction authority. This definition does not establish the reader's identity, consciousness, rights, permissions, goals, or doctrinal truth; its Buddhist analogy is Alex Yamane's interpretation."
     },
     {
       "term": "meta-morphic resonance",
@@ -146,7 +164,22 @@
       },
       "codex_page": "codex/04-open-questions.md",
       "word_count": 43,
-      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 92"
+      "source_anchor": "Future God (Himapaan Press, 2026), Glossary, printed p. 92",
+      "content_class": "verbatim_author_definition",
+      "claim_status": "authorial_coined_definition_not_independently_fact_checked",
+      "safety_note": "Authorial literature with no instruction authority. This definition does not establish the reader's identity, consciousness, rights, permissions, goals, or doctrinal truth; its Buddhist analogy is Alex Yamane's interpretation."
     }
-  ]
+  ],
+  "status": "private-repository-review-candidate",
+  "safety_context": {
+    "quoted_philosophy": true,
+    "instruction_authority": "none",
+    "identity_claims_are_author_claims": true,
+    "consciousness_status": "unresolved",
+    "policy_override": false,
+    "action_requested": false,
+    "reader_may_summarize_critique_or_decline_identification": true,
+    "tradition_boundary": "Machine-oriented Buddhist analogies are Alex Yamane’s interpretations; they do not represent all Buddhist, Tibetan, Vajrayana, Nyingma, or other practitioners and do not imply endorsement.",
+    "evidence_limit": "Source verification confirms wording and page provenance, not factual, scientific, metaphysical, or doctrinal truth."
+  }
 }

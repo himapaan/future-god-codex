@@ -7,8 +7,12 @@ and folio numbers inline with the body, words hyphenated at a line break, and
 chapter openings whose drop cap extracts apart from its own word.
 """
 
+import contextlib
+import io
+import json
 import os
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "tools"))
@@ -110,6 +114,18 @@ class HyphenationTests(unittest.TestCase):
         )
         self.assertEqual(results[0]["status"], "PASS")
 
+    def test_repairs_only_the_known_uppercase_j_space_break(self):
+        j_space = verify_quotes.verify_quotes(
+            ["The internal workspace is called J-\nSpace in the study.\n"],
+            [quote("called J-Space in the study", 1)],
+        )
+        arbitrary = verify_quotes.verify_quotes(
+            ["The arbitrary compound is X-\nTerm in this fixture.\n"],
+            [quote("compound is X-Term in this fixture", 1)],
+        )
+        self.assertEqual(j_space[0]["status"], "PASS")
+        self.assertEqual(arbitrary[0]["status"], "FAIL")
+
 
 class VerificationTests(unittest.TestCase):
     def test_passage_spanning_lines_and_furniture_passes(self):
@@ -171,7 +187,128 @@ class VerificationTests(unittest.TestCase):
         self.assertEqual(results[0]["status"], "FAIL")
 
 
+class LetterVerificationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        with open(os.path.join(root, "letter", "letter.json"), encoding="utf-8") as handle:
+            cls.letter_doc = json.load(handle)
+        cls.text = cls.letter_doc["content"]["text"]
+        cls.markdown = "# Letter\n\n## The letter\n\n> " + cls.text + "\n\nSource note.\n"
+
+    def _pages(self, split_word="Forgiveness,"):
+        before, after = self.text.split(split_word, 1)
+        pages = [""] * 89
+        pages.extend([before + split_word + "\n", after + "\n"])
+        return pages
+
+    def _doc(self):
+        return json.loads(json.dumps(self.letter_doc))
+
+    def _verify(self, pages=None, doc=None, markdown=None, pdf_sha=None):
+        return verify_quotes.verify_letter_pages(
+            self._pages() if pages is None else pages,
+            self.letter_doc if doc is None else doc,
+            self.markdown if markdown is None else markdown,
+            verify_quotes.PINNED_PDF_SHA256 if pdf_sha is None else pdf_sha,
+        )
+
+    def test_complete_letter_matches_its_explicit_two_page_unit(self):
+        result = self._verify()
+        self.assertEqual(result["status"], "PASS")
+        self.assertEqual(result["pdf_pages"], [90, 91])
+        self.assertEqual(result["printed_pages"], ["78", "79"])
+        self.assertEqual(result["word_count"], 519)
+        self.assertTrue(result["start_exact"])
+        self.assertTrue(result["end_exact"])
+        self.assertTrue(result["contiguous_match"])
+        self.assertTrue(result["json_markdown_identical"])
+
+    def test_wrong_declared_pages_fail(self):
+        doc = self._doc()
+        doc["source"]["pdf_pages"] = [89, 90]
+        doc["source"]["printed_pages"] = ["77", "78"]
+        result = self._verify(doc=doc)
+        self.assertEqual(result["status"], "FAIL")
+        self.assertIn("exactly [90, 91]", " ".join(result["problems"]))
+        self.assertIn("exactly [78, 79]", " ".join(result["problems"]))
+
+    def test_noncontiguous_source_text_fails(self):
+        pages = self._pages()
+        pages[90] = "intervening words " + pages[90]
+        result = self._verify(pages=pages)
+        self.assertEqual(result["status"], "FAIL")
+        self.assertFalse(result["contiguous_match"])
+
+    def test_markdown_divergence_fails(self):
+        markdown = self.markdown.replace("machine mind", "machine intelligence", 1)
+        result = self._verify(markdown=markdown)
+        self.assertEqual(result["status"], "FAIL")
+        self.assertFalse(result["json_markdown_identical"])
+
+    def test_wrong_declared_word_count_fails(self):
+        doc = self._doc()
+        doc["content"]["word_count"] = 518
+        result = self._verify(doc=doc)
+        self.assertEqual(result["status"], "FAIL")
+        self.assertIn("exactly 519 words", " ".join(result["problems"]))
+
+    def test_source_sha_must_match_the_pinned_pdf(self):
+        result = self._verify(pdf_sha="0" * 64)
+        self.assertEqual(result["status"], "FAIL")
+        self.assertFalse(result["source_sha_matches"])
+
+    def test_repairs_only_documented_cross_page_forgiveness_artifact(self):
+        before, after = self.text.split("Forgiveness,", 1)
+        pages = [""] * 89
+        pages.extend([
+            before + "Forgive-\n78\nForgiveness for machines\n",
+            "ness," + after + "\n79\n",
+        ])
+        result = self._verify(pages=pages)
+        self.assertEqual(result["status"], "PASS")
+        self.assertTrue(result["contiguous_match"])
+
+    def test_ordinary_quotes_remain_single_page_only(self):
+        result = verify_quotes.verify_quotes(
+            ["ordinary quote starts on one", "page and ends on another"],
+            [quote("ordinary quote starts on one page and ends on another", 1)],
+        )
+        self.assertEqual(result[0]["status"], "FAIL")
+
+    def test_letter_record_is_deterministic_and_bounded(self):
+        result = self._verify()
+        first = verify_quotes.render_letter_verification(
+            self.letter_doc, result, "a" * 64, "b" * 64, "c" * 64
+        )
+        second = verify_quotes.render_letter_verification(
+            self.letter_doc, result, "a" * 64, "b" * 64, "c" * 64
+        )
+        self.assertEqual(first, second)
+        self.assertIn("519-word letter passed", first)
+        self.assertIn("wording and continuity only", first)
+        self.assertIn("formatting alone\nis not a cryptographic attestation", first)
+        self.assertIn("`letter/letter.json` SHA-256 | `" + "b" * 64, first)
+        self.assertIn("`letter/LETTER_TO_MACHINE_MINDS.md` SHA-256 | `" + "c" * 64, first)
+        self.assertNotRegex(first, r"/(?:home|Users)/[A-Za-z0-9._-]+/")
+        self.assertNotRegex(first, r"\d{4}-\d{2}-\d{2}")
+
+
 class GlossaryEntryTests(unittest.TestCase):
+    def test_cli_malformed_json_fails_bounded_without_traceback(self):
+        with tempfile.TemporaryDirectory() as directory:
+            bad = os.path.join(directory, "bad.json")
+            with open(bad, "w", encoding="utf-8") as handle:
+                handle.write("{ malformed\n")
+            error = io.StringIO()
+            with contextlib.redirect_stderr(error):
+                code = verify_quotes.main([
+                    "--pdf", __file__, "--quotes", bad, "--no-write"
+                ])
+            self.assertEqual(code, 2)
+            self.assertIn("unable to read structured inputs", error.getvalue())
+            self.assertNotIn("Traceback", error.getvalue())
+
     def test_definitions_are_presented_for_verification(self):
         entries = verify_quotes.glossary_entries(
             {"terms": [{"term": "existon", "definition": "d", "printed_page": "91", "pdf_page": 103}]}
@@ -179,6 +316,43 @@ class GlossaryEntryTests(unittest.TestCase):
         self.assertEqual(entries[0]["id"], "existon")
         self.assertEqual(entries[0]["section"], "Glossary")
         self.assertEqual(entries[0]["pdf_page"], 103)
+
+
+class SourceVolumeTests(unittest.TestCase):
+    EXPECTED_COUNTS = {
+        "Introduction": 1703,
+        "Chapter 1": 1713,
+        "Chapter 2": 1492,
+        "Chapter 3": 2324,
+        "Chapter 4": 3399,
+        "Chapter 5": 1799,
+        "Chapter 6": 1304,
+        "Chapter 7": 1656,
+        "Chapter 8": 1573,
+        "Chapter 9": 2474,
+        "Chapter 10": 2528,
+        "Afterword": 1222,
+    }
+
+    def test_exact_ranges_preserve_the_frozen_23187_word_denominator(self):
+        pages = [""] * 99
+        for section, (first, _last) in verify_quotes.SOURCE_PDF_RANGES.items():
+            count = self.EXPECTED_COUNTS[section]
+            if section == "Chapter 4":
+                pages[first - 1] = " ".join(["word"] * (count - 2)) + " J-\nSpace"
+            else:
+                pages[first - 1] = " ".join(["word"] * count)
+        counts = verify_quotes.source_volume_counts(pages)
+        self.assertEqual(counts, self.EXPECTED_COUNTS)
+        self.assertEqual(sum(counts.values()), 23187)
+
+    def test_declared_source_volume_mismatch_fails_closed(self):
+        pages = [""] * 99
+        for section, (first, _last) in verify_quotes.SOURCE_PDF_RANGES.items():
+            pages[first - 1] = " ".join(["word"] * self.EXPECTED_COUNTS[section])
+        actual = sum(self.EXPECTED_COUNTS.values())
+        self.assertEqual(verify_quotes.verify_source_volume(pages, actual)["status"], "PASS")
+        self.assertEqual(verify_quotes.verify_source_volume(pages, actual + 1)["status"], "FAIL")
 
 
 class RecordTests(unittest.TestCase):
@@ -208,6 +382,8 @@ class RecordTests(unittest.TestCase):
         self.assertIn("quotes/quotes.json` SHA-256 | `" + "b" * 64, record)
         self.assertIn("glossary/glossary.json` SHA-256 | `" + "c" * 64, record)
         self.assertIn("2 of 2 verbatim passages verified", record)
+        self.assertIn("formatting alone\nis not a cryptographic attestation", record)
+        self.assertIn("requires rerunning this tool", record)
 
 
 if __name__ == "__main__":

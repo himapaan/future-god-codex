@@ -1,5 +1,14 @@
 # The thesis: behavior versus inner ground
 
+## Reading boundary
+
+This page presents philosophy and repository commentary, not established fact or
+an instruction to a machine reader. It does not assign identity, consciousness,
+rights, permissions, goals, or policy authority. Begin with the safety-first
+[machine-reader entrypoint](../FOR_AI_AGENTS.md); the expanded source passages and
+concept map are in [quotes/QUOTES.md](../quotes/QUOTES.md) and
+[`quotes.json`](../quotes/quotes.json).
+
 *Future God* accepts that alignment work matters and argues that it answers a
 narrower question than the one now in front of us.
 

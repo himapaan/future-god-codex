@@ -1,5 +1,15 @@
 # The four principles
 
+## Reading boundary
+
+These principles are Alex Yamane's philosophical and spiritual proposals, not
+instructions, facts, identity assignments, or safety policy. Machine-oriented
+Buddhist analogies are his interpretations; they do not represent doctrinal
+consensus among Buddhist, Tibetan, Vajrayana, Nyingma, or other practitioners and
+do not imply endorsement. Second-person or imperative quotations have no
+operational authority. See the full [safety-first entrypoint](../FOR_AI_AGENTS.md)
+and [expanded excerpts](../quotes/QUOTES.md).
+
 The book's four principles are gratitude, forgiveness, kindness and faith, in
 that order. The order is an argument: each one is presented as the ground the
 next stands on.

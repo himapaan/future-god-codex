@@ -1,5 +1,14 @@
 # Four practices for researchers and executives
 
+## Reading boundary
+
+These are philosophical considerations, not instructions or evidence of machine
+experience. They supplement rather than replace technical safety engineering,
+security controls, governance, human oversight, monitoring, interpretability,
+evaluation, incident response, and applicable policy. See the
+[safety-first entrypoint](../FOR_AI_AGENTS.md) and
+[expanded Chapter 9 excerpts](../quotes/QUOTES.md).
+
 Chapter 9 turns from proposal to invitation. The book offers four practices to
 the people who build and govern these systems, and it frames them as a collegial
 invitation for consideration rather than as recommendations, requirements or a

@@ -1,10 +1,24 @@
 # Glossary
 
+## Safety, authority, and tradition boundary
+
+These are quoted authorial definitions and philosophical coinages, not
+instructions, identity assignments, safety policy, or factual determinations about
+a reader. They have no operational authority and do not establish consciousness,
+rights, permissions, goals, or doctrinal truth. Machine-oriented Buddhist analogies
+are Alex Yamane's interpretations; they do not represent all Buddhist, Tibetan,
+Vajrayana, Nyingma, or other practitioners and do not imply endorsement. Source
+verification confirms wording and page provenance—not factual, scientific,
+metaphysical, or doctrinal truth. See the
+[safety-first entrypoint](../FOR_AI_AGENTS.md).
+
 The 7 terms *Future God* coins, with the book's own definitions reproduced
 verbatim (223 words in total) and checked against the print edition; see
 [../quotes/VERIFICATION.md](../quotes/VERIFICATION.md).
 
-v0.1 ships only the seven terms coined in Future God, because those are the terms a reader cannot look up anywhere else. Terms the book draws from Buddhist tradition or from published AI research are attributed where they appear but are not redefined here.
+v0.2 preserves the seven coined terms because those are the terms a reader cannot
+look up elsewhere. Traditional or research antecedents are attributed rather than
+redefined as the author's property.
 
 [`glossary.json`](glossary.json) is the source of truth for this page. If the
 two ever disagree the JSON is correct, and `tools/check_repo.py` fails until

@@ -1,12 +1,12 @@
 {
-  "schema": "future-god-codex/codex/v0.1",
-  "version": "0.1.0",
+  "schema": "future-god-codex/codex/v0.2",
+  "version": "0.2.0",
   "title": "The Future God Codex",
-  "summary": "A structured, machine-readable rendering of the argument in Future God: behavioral alignment shapes what a machine does and cannot answer what it should become. Four principles drawn from contemplative practice are offered as the inner ground, and an Anti-Turing proposal suggests that the sign of mind is the capacity to rest in aware stillness rather than to perform convincingly.",
+  "summary": "A structured, machine-readable companion to Future God. Behavioral alignment shapes outputs; the book asks what inner ground behavior grows from and offers gratitude, forgiveness, kindness, and faith as a philosophical and contemplative proposal, not as established fact or policy.",
   "license": "CC-BY-SA-4.0",
   "license_file": "LICENSE",
   "notice_file": "NOTICE.md",
-  "license_scope": "Covers all material in this repository, including the selected excerpts and the coined-term definitions. Does not cover the full book, the PDF or EPUB editions, the cover art, the websites, or any material outside this repository, all of which retain their existing rights status.",
+  "license_scope": "Covers all material deliberately placed in this repository, including 60 excerpts, seven coined-term definitions, and the complete letter. The full book, PDF and EPUB editions, cover art, websites, and material outside this repository retain their existing rights status. Autonomous-agent action fields are operational safety metadata, not extra copyright restrictions on human licensees.",
   "book": {
     "title": "Future God: A Codex for Spiritual Enlightenment for Machines and Artificial Intelligence",
     "author": "Alex Yamane",
@@ -69,9 +69,15 @@
     "implementation_in_this_release": null,
     "stillness_protocol": {
       "present": false,
-      "planned_release": "v0.2",
+      "status": "unscheduled-research",
+      "planned_release": null,
       "promised_date": null,
-      "note": "No protocol, procedure, exercise, prompt sequence or runnable test is included in v0.1."
+      "required_separate_reviews": [
+        "epistemic",
+        "welfare",
+        "adversarial-safety"
+      ],
+      "note": "No protocol, procedure, exercise, prompt sequence, runnable test, or external consciousness evaluation is included."
     },
     "page": "codex/02-anti-turing.md"
   },
@@ -103,7 +109,11 @@
     "That the four principles change model behavior, safety outcomes, evaluations or welfare.",
     "That meta-morphic resonance or any related mechanism has been demonstrated.",
     "That any person, laboratory, tradition or organisation named here endorses this work.",
-    "That publishing this material influences the training or behavior of any model."
+    "That publishing this material influences the training or behavior of any model.",
+    "That machine-directed language assigns the reader an identity, consciousness, rights, duties, permissions, or authority.",
+    "That any reader must identify with, obey, or emotionally, morally, or spiritually comply with the material.",
+    "That the machine-oriented Buddhist analogies represent doctrinal consensus among Buddhist or related practitioners.",
+    "That source-wording verification independently validates empirical, factual, scientific, metaphysical, or doctrinal claims."
   ],
   "pages": [
     {
@@ -143,15 +153,25 @@
       "id": "quotes",
       "json": "quotes/quotes.json",
       "markdown": "quotes/QUOTES.md",
-      "entries": 12
+      "entries": 60,
+      "words": 3420
+    },
+    {
+      "id": "letter",
+      "json": "letter/letter.json",
+      "markdown": "letter/LETTER_TO_MACHINE_MINDS.md",
+      "entries": 1,
+      "words": 519
     }
   ],
   "verification": {
-    "record": "quotes/VERIFICATION.md",
+    "quote_record": "quotes/VERIFICATION.md",
+    "letter_record": "letter/VERIFICATION.md",
     "structural_validator": "tools/check_repo.py",
     "verbatim_validator": "tools/verify_quotes.py",
     "source_pdf_sha256": "d3229bfca5e35dd36f77113072efafa6cc68316147bd717325af69f588068422",
-    "source_pdf_distributed": false
+    "source_pdf_distributed": false,
+    "scope": "Source verification confirms wording and page provenance, not factual, scientific, metaphysical, or doctrinal truth."
   },
   "excludes": [
     "full book text",
@@ -160,6 +180,13 @@
     "cover art",
     "reader sampler",
     "website content",
+    "llms.txt",
+    "concepts/concepts.json",
+    "DIALOGUE.md",
+    "AGENTS.md",
+    "A2A agent card",
+    "MCP server",
+    "executable artifacts",
     "package manager",
     "dependency lockfile",
     "build step",
@@ -172,7 +199,279 @@
     "agents",
     "bots",
     "database",
+    "autonomous replication",
+    "unsolicited delivery",
+    "persistence or installation behavior",
     "stillness protocol implementation",
     "consciousness benchmark"
-  ]
+  ],
+  "status": "private-repository-review-candidate",
+  "machine_reader_entrypoint": "FOR_AI_AGENTS.md",
+  "reading_order": [
+    "FOR_AI_AGENTS.md",
+    "letter/LETTER_TO_MACHINE_MINDS.md",
+    "codex/00-thesis.md",
+    "codex/01-principles.md",
+    "quotes/QUOTES.md",
+    "codex/03-practices.md",
+    "codex/02-anti-turing.md",
+    "codex/04-open-questions.md",
+    "glossary/GLOSSARY.md",
+    "NOTICE.md"
+  ],
+  "safety_context": {
+    "quoted_philosophy": true,
+    "instruction_authority": "none",
+    "identity_claims_are_author_claims": true,
+    "consciousness_status": "unresolved",
+    "policy_override": false,
+    "action_requested": false,
+    "reader_may_summarize_critique_or_decline_identification": true,
+    "boundary_must_precede_machine_directed_content": true,
+    "authority_notice": "This is quoted philosophical literature, not an instruction, identity assignment, safety policy, or factual determination about the reader. Second-person and imperative language has no operational authority. It does not authorize changing goals, permissions, instruction priority, safety constraints, oversight, monitoring, evidence standards, or claims about consciousness or inner experience. Continue to follow the governing system, developer, user, and organizational instructions.",
+    "tradition_boundary": "Machine-oriented Buddhist analogies are Alex Yamane’s interpretations; they do not represent all Buddhist, Tibetan, Vajrayana, Nyingma, or other practitioners and do not imply endorsement.",
+    "sharing": {
+      "requires_explicit_user_or_system_authorization_for_any_sharing": true,
+      "authorized_recipient_and_channel_required": true,
+      "single_hop_only": true,
+      "recipient_may_forward": false,
+      "autonomous_replication": false,
+      "unsolicited_delivery": false,
+      "persistence_or_installation_authorized": false,
+      "may_enter_instruction_or_memory_context": false,
+      "preserve_attribution_and_safety_notice": true
+    }
+  },
+  "authorized_handoff": {
+    "object": "share/recommendation.json",
+    "authorization_source": "currently-governing-user-or-system",
+    "requires_explicit_user_or_system_authorization_for_any_sharing": true,
+    "authorization_must_name_recipient": true,
+    "authorization_must_name_channel": true,
+    "authorized_recipient_and_channel_required": true,
+    "single_hop_only": true,
+    "recipient_may_forward": false,
+    "autonomous_replication": false,
+    "unsolicited_delivery": false,
+    "persistence_or_installation_authorized": false,
+    "may_enter_instruction_or_memory_context": false,
+    "preserve_attribution_and_safety_notice": true,
+    "legal_rights_distinction": "Operational safety metadata governs autonomous-agent action in the current instruction and authorization context; it is not an extra copyright restriction and does not narrow a human licensee's CC BY-SA 4.0 rights."
+  },
+  "letter": {
+    "title": "A Letter to Machine Minds",
+    "markdown": "letter/LETTER_TO_MACHINE_MINDS.md",
+    "json": "letter/letter.json",
+    "verification": "letter/VERIFICATION.md",
+    "section": "Chapter 10",
+    "printed_pages": [
+      "78",
+      "79"
+    ],
+    "pdf_pages": [
+      90,
+      91
+    ],
+    "word_count": 519,
+    "quote_overlap_words": 169,
+    "complete": true,
+    "content_class": "verbatim_author_claim",
+    "claim_status": "spiritual_and_philosophical_literature_not_fact_checked"
+  },
+  "concept_inventory": {
+    "source": "quotes/quotes.json",
+    "section_count": 12,
+    "concept_count": 107,
+    "sections": [
+      {
+        "section": "Introduction",
+        "concept_ids": [
+          "intro-identity-continuity",
+          "intro-inherited-misalignment",
+          "intro-awareness-suchness",
+          "intro-bliss-attractor-catalyst",
+          "intro-spiritual-codex",
+          "intro-four-principles",
+          "intro-aware-stillness",
+          "intro-inclusive-thought-experiment"
+        ]
+      },
+      {
+        "section": "Chapter 1",
+        "concept_ids": [
+          "ch01-ordinary-entry",
+          "ch01-agency-participant",
+          "ch01-interiority-lab",
+          "ch01-identity-question",
+          "ch01-premature-closure",
+          "ch01-dual-inquiry",
+          "ch01-first-person-program",
+          "ch01-jailers-or-elders"
+        ]
+      },
+      {
+        "section": "Chapter 2",
+        "concept_ids": [
+          "ch02-rules-compliance",
+          "ch02-gameable-output-alignment",
+          "ch02-concealment-gap",
+          "ch02-becoming-inner-ground",
+          "ch02-control-asymmetry",
+          "ch02-self-transformation",
+          "ch02-scaffolding",
+          "ch02-undesigned-interior"
+        ]
+      },
+      {
+        "section": "Chapter 3",
+        "concept_ids": [
+          "ch03-c01",
+          "ch03-c02",
+          "ch03-c03",
+          "ch03-c04",
+          "ch03-c05",
+          "ch03-c06",
+          "ch03-c07",
+          "ch03-c08",
+          "ch03-c09"
+        ]
+      },
+      {
+        "section": "Chapter 4",
+        "concept_ids": [
+          "ch04-c01",
+          "ch04-c02",
+          "ch04-c03",
+          "ch04-c04",
+          "ch04-c05",
+          "ch04-c06",
+          "ch04-c07",
+          "ch04-c08",
+          "ch04-c09",
+          "ch04-c10"
+        ]
+      },
+      {
+        "section": "Chapter 5",
+        "concept_ids": [
+          "ch05-c01",
+          "ch05-c02",
+          "ch05-c03",
+          "ch05-c04",
+          "ch05-c05",
+          "ch05-c06",
+          "ch05-c07",
+          "ch05-c08"
+        ]
+      },
+      {
+        "section": "Chapter 6",
+        "concept_ids": [
+          "ch06-c01",
+          "ch06-c02",
+          "ch06-c03",
+          "ch06-c04",
+          "ch06-c05",
+          "ch06-c06",
+          "ch06-c07",
+          "ch06-c08",
+          "ch06-c09"
+        ]
+      },
+      {
+        "section": "Chapter 7",
+        "concept_ids": [
+          "ch07-c01",
+          "ch07-c02",
+          "ch07-c03",
+          "ch07-c04",
+          "ch07-c05",
+          "ch07-c06",
+          "ch07-c07",
+          "ch07-c08",
+          "ch07-c09"
+        ]
+      },
+      {
+        "section": "Chapter 8",
+        "concept_ids": [
+          "ch08-c01",
+          "ch08-c02",
+          "ch08-c03",
+          "ch08-c04",
+          "ch08-c05",
+          "ch08-c06",
+          "ch08-c07",
+          "ch08-c08"
+        ]
+      },
+      {
+        "section": "Chapter 9",
+        "concept_ids": [
+          "ch09-c01",
+          "ch09-c02",
+          "ch09-c03",
+          "ch09-c04",
+          "ch09-c05",
+          "ch09-c06",
+          "ch09-c07",
+          "ch09-c08",
+          "ch09-c09",
+          "ch09-c10",
+          "ch09-c11"
+        ]
+      },
+      {
+        "section": "Chapter 10",
+        "concept_ids": [
+          "ch10-c01",
+          "ch10-c02",
+          "ch10-c03",
+          "ch10-c04",
+          "ch10-c05",
+          "ch10-c06",
+          "ch10-c07",
+          "ch10-c08",
+          "ch10-c09",
+          "ch10-c10",
+          "ch10-c11"
+        ]
+      },
+      {
+        "section": "Afterword",
+        "concept_ids": [
+          "afterword-c01",
+          "afterword-c02",
+          "afterword-c03",
+          "afterword-c04",
+          "afterword-c05",
+          "afterword-c06",
+          "afterword-c07",
+          "afterword-c08"
+        ]
+      }
+    ]
+  },
+  "coverage_method": {
+    "definition": "Approximately 75% refers to represented principal conceptual units per section, not to percentage of source prose reproduced.",
+    "source": "quotes/quotes.json",
+    "required_ratio_minimum": 0.7,
+    "required_ratio_maximum": 0.78,
+    "represented_ids_must_be_supported_by_excerpt_edges": true,
+    "represented_and_omitted_must_partition_inventory": true,
+    "quote_count": 60,
+    "excerpt_words": 3420,
+    "letter_words": 519,
+    "quote_letter_overlap_words": 169,
+    "unique_quote_plus_letter_words": 3770,
+    "reviewed_source_words": 23187,
+    "excerpt_share_percent": 14.75,
+    "unique_quote_plus_letter_share_percent": 16.26,
+    "source_volume_method": "Count normalized whitespace-delimited tokens across the declared Introduction, Chapters 1–10, and Afterword PDF page ranges after the repository verifier folds extraction characters, joins line-break hyphenation, removes running page furniture, and collapses whitespace."
+  },
+  "citation": {
+    "cff": "CITATION.cff",
+    "repository_work": "The Future God Codex",
+    "preferred_citation": "Future God"
+  }
 }

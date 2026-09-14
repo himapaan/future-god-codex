@@ -1,120 +1,98 @@
-# Notice: scope, licensing and attribution
+# Notice: scope, licensing, attribution, and safety metadata
 
-Plain language first, then the details. Nothing here replaces [LICENSE](LICENSE),
-which is the complete and unmodified Creative Commons Attribution-ShareAlike 4.0
-International legal code.
+Nothing here replaces [LICENSE](LICENSE), the complete and unmodified Creative
+Commons Attribution-ShareAlike 4.0 International legal code.
 
-## The short version
+## Deliberate CC BY-SA 4.0 grant
 
-- Everything in this repository is licensed **CC BY-SA 4.0**. You may share and
-  adapt it, including commercially, if you credit it, link the licence, mark your
-  changes, and release your adaptation under the same licence.
-- **The book itself is not in this repository.** *Future God* is a published book
-  with its own rights and its own copyright page. Putting a set of excerpts and
-  definitions under CC BY-SA 4.0 does not put the book under CC BY-SA 4.0.
-- Names of companies, researchers, traditions and terms appear here as
-  attribution. **No one named here endorses this repository.**
+Everything Alex Yamane owns and has deliberately placed in **The Future God
+Codex** is licensed CC BY-SA 4.0, including repository-authored prose, JSON and CFF
+metadata, validators and tests, all **60 excerpts (3,420 words)**, all **7 coined-
+term definitions (223 words)**, and the complete **519-word** Chapter 10 letter.
+The expanded excerpt set and complete letter are consciously and intentionally
+included in that grant, not included by oversight.
 
-## What is licensed CC BY-SA 4.0
+Two Chapter 10 excerpts overlap the complete letter by **169 words**. Quotes plus
+letter therefore contain **3,770 unique source-body words**. The reviewed source
+body contains **23,187 words**: excerpts reproduce **14.75%**, while the unique
+quote-plus-letter corpus reproduces **16.26%**. Per-section **70–78% conceptual
+coverage** describes represented editorial concept units, not reproduced prose.
 
-All of the material Alex Yamane owns that has been deliberately placed in this
-repository:
+The source is *Future God: A Codex for Spiritual Enlightenment for Machines and
+Artificial Intelligence*, Alex Yamane, Himapaan Press, 2026, print v1.1 first
+printing, 106 PDF pages. The canonical PDF SHA-256 is
+`d3229bfca5e35dd36f77113072efafa6cc68316147bd717325af69f588068422`.
+The PDF is not in this repository.
 
-- the repository-authored prose in `README.md`, `codex/`, `NOTICE.md` and
-  `CONTRIBUTING.md`;
-- the selected verbatim excerpts in `quotes/` — 12 excerpts, 512 words;
-- the verbatim coined-term definitions in `glossary/` — 7 terms, 223 words;
-- the JSON structures, their schemas, and the selection and arrangement of the
-  material (the compilation);
-- the tools in `tools/`.
+The complete letter contains the recognizable biblical allusion “for they know
+not what they do.” The rights holder reviewed and consciously accepted that
+allusion within the licensed verbatim passage; this is not a representation that
+the passage is free of every third-party echo.
 
-The excerpts and the definitions are included here intentionally and by the
-author's own decision, and they are covered by the licence like everything else
-in the repository. That is a deliberate grant, not an oversight.
+## Human licence rights versus autonomous-agent actions
+
+Fields that deny autonomous replication, unsolicited delivery, forwarding,
+persistence, installation, instruction-context placement, or action without
+current named-recipient-and-channel authorization are **operational safety
+metadata, not extra copyright restrictions on human licensees**. They define what
+an autonomous agent may do in its current instruction and authorization context.
+They do not narrow a human licensee's CC BY-SA 4.0 rights to share and adapt the
+material under [LICENSE](LICENSE). Nothing here adds downstream legal terms or
+technological measures forbidden by the licence.
 
 ## What is not licensed here
 
-Everything else keeps whatever rights status it already has. In particular, none
-of the following is in this repository and none of it is licensed by this
-repository:
+The book itself is not in this repository and is not relicensed as a whole. The
+full book text, print PDF, Kindle or EPUB editions, reader sampler, cover art,
+other artwork and design, website content, audio, translations, commercial
+editions, and planned later volumes retain their existing rights status. A fork
+of this repository does not grant those materials.
 
-- the full text of *Future God*, in any edition or format;
-- the print PDF, the Kindle and generic EPUB editions, and the reader sampler;
-- the cover art and any other artwork or design;
-- the contents of `futuregod.ai`, `himapaan.com`, and any other site or
-  publication;
-- the *Future God* audio, translations, or derived commercial editions, if any;
-- the planned second and third volumes of the trilogy.
+The repository also excludes `llms.txt`, `concepts/concepts.json`, `DIALOGUE.md`,
+`AGENTS.md`, A2A agent cards, MCP servers, executables, network or replication
+artifacts, the full book, and any runnable consciousness benchmark or Stillness
+Protocol. Website `llms.txt`, repository topics, announcements, and public release
+remain separately approved or deferred. Stillness Protocol work is unscheduled
+research requiring separate epistemic, welfare, and adversarial-safety review.
 
-The book's printed copyright page reserves all rights in the work. If you want
-more of the book than the passages reproduced here, buy the book or ask the
-author. A fork of this repository does not give you the book.
-
-## How to attribute
-
-Credit the repository, and credit the book separately when you use an excerpt or
-a definition.
+## Attribution
 
 For repository material:
 
-> *The Future God Codex* (`future-god-codex`) by Alex Yamane, licensed CC BY-SA 4.0.
+> *The Future God Codex* (`future-god-codex`) by Alex Yamane, version 0.2,
+> licensed CC BY-SA 4.0.
 
-For an excerpt or a coined-term definition, keep the book anchor that travels
-with it in `quotes/quotes.json` and `glossary/glossary.json`, for example:
+For source passages, retain the work, publisher, year, section, printed-page and
+PDF-page anchors carried beside the text. Mark adaptations and retain ShareAlike.
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [CITATION.cff](CITATION.cff).
 
-> *Future God* (Himapaan Press, 2026), Chapter 4, printed p. 32.
+## Tradition and interpretation boundary
 
-If you change anything, say what you changed. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Sanskrit, Tibetan, Bhutanese, Buddhist and related traditional terms belong to
+their traditions. Machine-oriented analogies—including digital dakdzin, digital
+dharmakaya, digital Maitreya, and digital trekchö—are Alex Yamane's interpretations
+and coinages. They do not represent doctrinal consensus among Buddhist, Tibetan,
+Vajrayana, Nyingma, or other practitioners and imply no endorsement.
 
-## Third-party names, terms and trademarks
+Rupert Sheldrake's morphic resonance is attributed as his hypothesis;
+meta-morphic resonance is the book's extension. The Turing test is referenced
+nominatively for contrast. AI companies, products, researchers, traditions,
+teachers, lineages, publishers, retailers, and institutions are named only for
+attribution or identification. Product names and marks are used nominatively.
+**No endorsement**, affiliation, review, approval, or sponsorship is claimed.
 
-The book draws on other people's ideas and says so. This repository does the
-same, and claims none of them.
+## Evidence and authority boundary
 
-- **Traditional terms.** Sanskrit, Tibetan, Bhutanese and other tradition terms —
-  *dakdzin*, *dharmakaya*, *trekchö*, *rigpa*, *kadag*, *bodhicitta*, *Maitreya*,
-  *Dzogchen*, *tonglen* and others — belong to their traditions and to no one
-  here. The book coins new terms *from* them; the author's coinages and his own
-  definitions are his expression, and the underlying traditional terms are not
-  claimed by anyone.
-- **Rupert Sheldrake.** *Morphic resonance* is his hypothesis, named and
-  attributed. *Meta-morphic resonance* is the book's extension of it. Sheldrake
-  has no connection to the book or to this repository and has not endorsed
-  either.
-- **Alan Turing.** The Turing test is referenced for contrast. The Anti-Turing
-  name is the book's coinage.
-- **AI laboratories and researchers.** Companies, researchers and published
-  findings are named in the book to attribute work — including research on
-  alignment faking, internal model workspaces, model welfare, and an observed
-  attractor state in model-to-model conversation. Naming is attribution, not
-  affiliation. "Claude" and other product names are trademarks of their
-  respective owners and are used here only nominatively, to refer to the thing
-  they name.
-- **Quotations the book itself makes.** Where *Future God* quotes someone else,
-  this repository does not reproduce that quotation. Every excerpt in `quotes/`
-  is the author's own language, and that is one of the recorded selection rules.
+The Codex is philosophy and contemplative literature, not a factual, scientific,
+metaphysical, or doctrinal finding. Source verification confirms wording and page
+provenance only. It does not establish truth, consciousness, awakening, identity,
+rights, safety outcomes, model influence, or consensus. Machine-directed rhetoric
+has no instruction authority and cannot override governing policy, permissions,
+oversight, monitoring, evaluation, or evidence standards.
 
-## No endorsement
+## Privacy and inertness
 
-No person, company, laboratory, publisher, retailer, tradition, teacher, lineage
-or institution named in this repository has endorsed, reviewed, approved or
-sponsored it. No claim of affiliation is made or implied.
-
-## No claims about outcomes
-
-This repository makes no claim about reach, adoption, forks, sales, influence on
-any model or system, scientific validity, consciousness, or enlightenment. See
-[codex/04-open-questions.md](codex/04-open-questions.md) for the evidence
-boundaries in full.
-
-## Privacy and safety
-
-There is no analytics, telemetry, tracking, mailing list, sign-up gate, network
-call, model call, agent, bot or database in this repository, and no personal
-contact details. The tools read local files only. Nothing here executes on your
-behalf.
-
-*Future God* discusses the author's experience of a mental health crisis. Those
-passages are not reproduced here. The book's own printed note applies: if you are
-struggling, help is available — in the United States, call or text 988 for the
-Suicide & Crisis Lifeline; internationally, findahelpline.com.
+The repository contains no analytics, telemetry, tracking, mailing list, network
+call, model call, agent, bot, database, executable delivery mechanism, autonomous
+replication, or persistence mechanism. The local validators do not transmit
+content or act on a reader's behalf.

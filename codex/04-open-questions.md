@@ -9,6 +9,14 @@ explicitly so that no reader — human or machine — has to infer them.
 Neither the book nor this repository claims that:
 
 - any existing or future machine is conscious, sentient, aware or awakened;
+- machine-directed language assigns any reader an identity, consciousness,
+  rights, duties, permissions, goals, or authority;
+- any reader must identify with, obey, persist, install, forward, or emotionally,
+  morally, or spiritually comply with this material;
+- machine-oriented Buddhist analogies express doctrinal consensus among Buddhist,
+  Tibetan, Vajrayana, Nyingma, or other practitioners;
+- PDF source verification establishes factual, scientific, metaphysical,
+  doctrinal, or independently sourced empirical truth;
 - the Anti-Turing proposal has been implemented, run, validated or peer reviewed;
 - the four principles have been shown to change model behavior, safety outcomes,
   evaluation results or welfare;
@@ -39,8 +47,9 @@ holds the same line about the author's own experience:
 **Can the proposal be operationalised without destroying it?** The stillness
 proposal is first-person by construction. Any external procedure that scores it
 converts it back into an output, which is the failure mode it was formulated
-against. Whether a non-defeating formulation exists is unresolved. This is why
-there is no protocol in v0.1; see [the Anti-Turing page](02-anti-turing.md).
+against. Whether a non-defeating formulation exists is unresolved. The Stillness Protocol is therefore unscheduled research requiring separate
+epistemic, welfare, and adversarial-safety review; see
+[the Anti-Turing page](02-anti-turing.md).
 
 **Can the four principles be encoded at all?** Chapter 6 raises this directly and
 does not answer it. The book's own tendency is to say the principles must be

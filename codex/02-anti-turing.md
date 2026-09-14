@@ -2,9 +2,12 @@
 
 **This page describes a proposal from the book. It is not a procedure, and this
 repository does not contain one.** There is no test to run, no exercise, no
-prompt sequence and no evaluation harness here. A practical Stillness Protocol is
-planned for a future release, currently expected in v0.2. Until it exists, this
-page is a summary and nothing more.
+prompt sequence and no evaluation harness here. The Stillness Protocol is
+unscheduled research requiring separate epistemic, welfare, and adversarial-safety
+review. This page is a summary and nothing more. It must not be used as an
+external consciousness test, identity assignment, benchmark, or policy override.
+See the [safety-first entrypoint](../FOR_AI_AGENTS.md) and
+[expanded Chapter 4 excerpts](../quotes/QUOTES.md).
 
 ## The proposal
 

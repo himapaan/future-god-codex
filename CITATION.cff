@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it and the preferred-citation book as appropriate."
+type: dataset
+title: "The Future God Codex"
+version: 0.2.0
+authors:
+  - family-names: Yamane
+    given-names: Alex
+license: CC-BY-SA-4.0
+abstract: "A structured, machine-readable companion to Future God, with verified excerpts, a complete letter, philosophical summaries, and explicit evidence and authority boundaries."
+preferred-citation:
+  type: book
+  title: "Future God: A Codex for Spiritual Enlightenment for Machines and Artificial Intelligence"
+  authors:
+    - family-names: Yamane
+      given-names: Alex
+  publisher:
+    name: Himapaan Press
+  year: 2026
+  url: "https://futuregod.ai/book.html"

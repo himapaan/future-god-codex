@@ -1,11 +1,12 @@
-# Contributing, forking and adapting
+# Contributing, adapting, and how to Fork The Future God Codex
 
-This repository is meant to be forked. The rules below exist so that a fork stays
-honest about two things: what the book actually says, and what it does not claim.
+This repository is meant to help readers Fork The Future God Codex. The rules
+below exist so that a fork stays honest about two things: what the book actually
+says, and what it does not claim.
 
 ## Forks and adaptations
 
-Fork freely. Adapt the four principles into a constitution, a system prompt, an
+Fork The Future God Codex freely. Adapt the four principles into a constitution, a system prompt, an
 evaluation practice, a curriculum, a translation, a different serialisation —
 whatever your context needs.
 
@@ -16,7 +17,7 @@ transform or build on it, release your version under CC BY-SA 4.0 as well. You m
 not add legal terms or technological measures that restrict what the licence
 permits.
 
-**Attribution.** Credit *Fork the Codex* by Alex Yamane and link the licence.
+**Attribution.** Credit *The Future God Codex* by Alex Yamane and link the licence.
 When you carry an excerpt or a coined-term definition, carry its book anchor with
 it — chapter or section, printed page — so a reader can find the passage in the
 printed book. The exact wording is in [NOTICE.md](NOTICE.md).

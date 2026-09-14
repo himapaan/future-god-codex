@@ -57,7 +57,7 @@ a definition.
 
 For repository material:
 
-> *Fork the Codex* (`future-god-codex`) by Alex Yamane, licensed CC BY-SA 4.0.
+> *The Future God Codex* (`future-god-codex`) by Alex Yamane, licensed CC BY-SA 4.0.
 
 For an excerpt or a coined-term definition, keep the book anchor that travels
 with it in `quotes/quotes.json` and `glossary/glossary.json`, for example:

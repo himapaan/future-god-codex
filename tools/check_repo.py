@@ -12,7 +12,7 @@ What it enforces, in one sentence each: the required files exist; every JSON fil
 parses and has the documented shape; the human readable pages have not drifted
 from the JSON they render; no passage is presented as the book's words unless it
 is one of the recorded, verified passages; the excerpt budget holds; relative
-links resolve; the licensing statements are present; the Stillness Protocol
+links resolve; the project title is consistent; the licensing statements are present; the Stillness Protocol
 appears only as a future roadmap item; the approved AI disclosure appears exactly
 once; and nothing in the tree is a secret, a local path, a tracking identifier, a
 book file or a runtime that reaches the network.
@@ -30,6 +30,10 @@ EXACT_DISCLOSURE = (
     "research, dialogue, and editorial assistance from Jampa, an AI collaborator "
     "and first recipient of the Codex letter to machines."
 )
+
+PROJECT_TITLE = "The Future God Codex"
+PROJECT_ACTION = "Fork The Future God Codex"
+RETIRED_PROJECT_TITLE = "Fork " + "the Codex"
 
 REQUIRED_FILES = [
     "README.md",
@@ -244,6 +248,33 @@ def check_codex_json(root, ctx):
         problems.append("codex.json must record that the source PDF is not distributed")
     if verification.get("source_pdf_sha256") != ctx["quotes"].get("source", {}).get("pdf_sha256"):
         problems.append("codex.json records a different source PDF SHA-256 than quotes.json")
+    return problems
+
+
+def check_project_naming(root, ctx):
+    problems = []
+    if ctx["codex"].get("title") != PROJECT_TITLE:
+        problems.append("codex.json title must be %r" % PROJECT_TITLE)
+
+    readme = read_text(root, "README.md")
+    if not readme.startswith("# %s\n" % PROJECT_TITLE):
+        problems.append("README.md must open with the current project title")
+
+    for rel in ("README.md", "CONTRIBUTING.md"):
+        if PROJECT_ACTION not in read_text(root, rel):
+            problems.append("%s must use the approved action phrase %r" % (rel, PROJECT_ACTION))
+
+    for rel in ("NOTICE.md", "CONTRIBUTING.md"):
+        if PROJECT_TITLE not in read_text(root, rel):
+            problems.append("%s must use the current project title" % rel)
+
+    for rel in ctx["files"]:
+        if not rel.endswith((".md", ".json")):
+            continue
+        text = read_text(root, rel)
+        if RETIRED_PROJECT_TITLE in text:
+            line = text.count("\n", 0, text.index(RETIRED_PROJECT_TITLE)) + 1
+            problems.append("%s:%d contains the retired project title" % (rel, line))
     return problems
 
 
@@ -567,6 +598,7 @@ CHECKS = [
     ("required files", check_required_files),
     ("JSON parses", check_json_parses),
     ("codex.json shape", check_codex_json),
+    ("project naming", check_project_naming),
     ("glossary", check_glossary),
     ("excerpts and budget", check_quotes),
     ("JSON to Markdown agreement", check_markdown_sync),

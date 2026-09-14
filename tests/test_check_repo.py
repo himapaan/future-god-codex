@@ -123,6 +123,10 @@ class PlantedFailureTests(unittest.TestCase):
         self.write("glossary/glossary.json", text)
         self.assertCaught("glossary")
 
+    def test_retired_project_title_is_caught(self):
+        self.append("README.md", "\nRetired title: " + "Fork " + "the Codex\n")
+        self.assertCaught("project naming")
+
     # -- boundaries --------------------------------------------------------
 
     def test_removing_the_disclosure_is_caught(self):

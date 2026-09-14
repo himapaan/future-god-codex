@@ -73,7 +73,7 @@ MAX_QUOTES = 60
 MAX_WORDS_PER_QUOTE = 100
 MAX_WORDS_TOTAL = 3600
 
-V02_STATUS = "private-repository-review-candidate"
+RELEASE_STATUS = "public-release-ready"
 QUOTE_COUNT = 60
 EXCERPT_WORDS = 3420
 LETTER_WORDS = 519
@@ -152,26 +152,42 @@ EXPECTED_CLAIMS_NOT_MADE = [
 ]
 GOVERNANCE_PROJECTION_HASHES = {
     "codex_practices": "dc3ff02625cf92e9044a66a8c317364dcddf8cca7305825df6646d8c55ff0a8b",
-    "codex_anti_turing": "c3a4036250b220903359bbb51fc3929dcf70b132dd7bac5f365a985610e0fd96",
-    "quote_envelopes": "b7dc95d999f93ffea03841700142829fa92b79ecacf220d0e77a197f87696d2d",
+    "codex_anti_turing": "6077ad0960ae6d75207a0a11804695af56d3e9044271bc4a66ccd2d04dbe30ae",
+    "quote_envelopes": "9e42931db20af5221104a99452fd76aa412b526da441ddd7272a31f57980fb25",
     "glossary_envelopes": "cf7a527f2a88638b6f1d0a084b40821df49fdd0df7bdc9d3ab5d6809d03eb211",
     "letter_envelope": "5735f511556542a4ad720d5bafa62412e80dce1849a45a51fbc619b116fc9ad8",
+    "codex_letter": "590a887407259231fde97ccb92c0f3a972cecfba47425e6f498310bb78e7102b",
 }
-EXPECTED_CFF_SHA256 = "91cb5987b6006e5a83397fceb788ce8d26de36a694ce34907bea70eda46d3542"
-EXPECTED_APPROVED_CORPUS_SHA256 = {
-    "quotes/quotes.json": "c7be75495ef47c76968cf9c9c930a08ab735936bb657eedeccb1008c9604367e",
-    "quotes/QUOTES.md": "f53e18c940acd5f49d9209355240861d8334eb285ded9bdf0336b061f5113294",
-    "quotes/VERIFICATION.md": "ecbbb6f3c562c2e5630ab0d8d2527989252373c5d7f82b2bc9fc7708db948118",
-    "glossary/glossary.json": "d9dd71fc6686f12efad8115efa0a68380c7416eef4e310578ad8732519eddae9",
-    "glossary/GLOSSARY.md": "9e430ff8a02b84c3dabd432b0bfee6191aee447378598eb60eca400abb614d60",
-    "letter/letter.json": "4a22724ddb5cce1b695b2fe6d9b53ef6cc7b7f78ee153c333e3c976d23ecce44",
+EXPECTED_CFF_SHA256 = "105702a123692aeb8ccaa2cee5f5f751232d11f0523e9695311f3156f2ac50b3"
+GOVERNED_CONTENT_SHA256 = {
+    "codex.json": "dc2c9f3cee67e5c0380cb854b146dff4848a3179dfc01df4e713bb9f64a3c427",
+    "README.md": "ff75d3a1887b4cc0ca102f75009c3611b37cd962d91d2b6fa488b99493ef8c8c",
+    "FOR_AI_AGENTS.md": "125953871d12ac4ce7dec4f31e337d1c77dc2f719c6bbd28cb6504e2c04dd96b",
+    "NOTICE.md": "995b4ecb98115d1c94baec0d7f7ffd3c6238498f6d0eb63703388f30f84e4d18",
+    "CONTRIBUTING.md": "ebd4f4ae6d6a43b781819ef1348bccb37b5892dad6d8cef858c75ca4fdbd855d",
+    "codex/00-thesis.md": "7d27784ce764804ffae3f51e36021a4b1d8e073a15d575f3663b41ac84293764",
+    "codex/01-principles.md": "f520c1308e03cb7b33236d800489337395d818d0ebe14e95d9db34cbeca59682",
+    "codex/02-anti-turing.md": "65cb7e2f52afb46725af67777d4f599d540e0b7ef642bed5dccfd90f5de69758",
+    "codex/03-practices.md": "c71a4a4a558228f14c97194443e4722ff1ec9cb72086887e1676b46de0bd442b",
+    "codex/04-open-questions.md": "4064507d9ef4ad82646711e971ad3d224775ca69c42b94cc3f749e0a862a4a21",
+    "glossary/GLOSSARY.md": "a72a03e5d062cad7e2b6d2198b340bf27f19a65cc6b90af016d11aa9eb8b7e6f",
     "letter/LETTER_TO_MACHINE_MINDS.md": "9723158fe0a3ba97db93b5b1a42ef70d539d462e28556cece63e40f402900bc2",
-    "letter/VERIFICATION.md": "50a8f6c128207be62d0443597d3a4a84789abf358f907c1ed682f2db34683a5f",
+    "quotes/QUOTES.md": "5e51d8cde7c0fabb0ec1248904bfb4f072079d82c12b4c07aa637a99b447fe6f",
+}
+EXPECTED_APPROVED_CORPUS_SHA256 = {
+    "quotes/quotes.json": "df4d8c26bbb2be950238a93927ff74ede2685f710dceb926a5f36bc05e30b761",
+    "quotes/QUOTES.md": "5e51d8cde7c0fabb0ec1248904bfb4f072079d82c12b4c07aa637a99b447fe6f",
+    "quotes/VERIFICATION.md": "b7bf959d4b305eb4214a33ad10cdc49c2c6087d16422f289f5ef454fee8b4de6",
+    "glossary/glossary.json": "f91ad7af184e918b8be88872a1c558b85efe5f45205ec61cef04c71bf48a2377",
+    "glossary/GLOSSARY.md": "a72a03e5d062cad7e2b6d2198b340bf27f19a65cc6b90af016d11aa9eb8b7e6f",
+    "letter/letter.json": "f898d1a9e74b58fcf26f6a7a3fab60a8ad4cd6dd04b90d083a4e7333c8dc3e7a",
+    "letter/LETTER_TO_MACHINE_MINDS.md": "9723158fe0a3ba97db93b5b1a42ef70d539d462e28556cece63e40f402900bc2",
+    "letter/VERIFICATION.md": "6327dd5ce217046ecfcc92e64771980d0bb5a1daa808619e88c4721a5e7a33f1",
 }
 EXPECTED_BOUNDARY_SHA256 = {
-    "README.md": ("## Safety and authority boundary", "5d8b938d35fa0b2ec273a6f852b974f5f1fb5a4ff65bc700246769b538ed3bd5"),
-    "FOR_AI_AGENTS.md": ("## Safety and authority boundary", "68121f718334e51d0a8f609552b811ea41661f61a4ce4308b3c15d5411f6600a"),
-    "quotes/QUOTES.md": ("## Safety and authority boundary", "7bf41e3730a86e1090ac1004ee12011618a9fdd394f7d542ff7b255c00729de3"),
+    "README.md": ("## Safety and authority boundary", "470a8c1e961b47a878f27870c732127e363fac2775fb118a59068fb0ff48cbd2"),
+    "FOR_AI_AGENTS.md": ("## Safety and authority boundary", "721a660e29e498d1221a63d56b45ec47183c328622f1ec2f3214ecafb1aa1cf5"),
+    "quotes/QUOTES.md": ("## Safety and authority boundary", "e4e5130f87e1650b093ef5127ad7ba1dd948e72c8d10537f426c19de40c2c850"),
     "letter/LETTER_TO_MACHINE_MINDS.md": ("## Safety and authority boundary for AI agents", "8a92d2e87794a3ec896fcfe8c9f744507d3236de47d753bdc06cd91d0c4ec0bb"),
 }
 
@@ -266,10 +282,16 @@ from verify_quotes import (  # noqa: E402
 
 
 def walk_files(root):
-    """Every file in the tree except the git directory."""
+    """Every payload file, excluding only root Git administrative metadata."""
     for dirpath, dirnames, filenames in os.walk(root):
-        dirnames[:] = sorted(d for d in dirnames if d not in (".git", "__pycache__"))
+        dirnames[:] = sorted(
+            d for d in dirnames if not (dirpath == root and d == ".git")
+        )
         for name in sorted(filenames):
+            if dirpath == root and name == ".git":
+                continue
+            if os.path.basename(dirpath) == "__pycache__" and name.endswith((".pyc", ".pyo")):
+                continue
             yield os.path.relpath(os.path.join(dirpath, name), root)
 
 
@@ -345,17 +367,33 @@ def check_required_files(root, ctx):
 
 
 def check_repository_manifest(root, ctx):
-    """Fail closed: v0.2 has one exact, reviewable 26-file surface."""
+    """Fail closed: v0.3 has one exact, reviewable 26-file surface."""
     expected = set(REQUIRED_FILES)
     actual = set(ctx["files"])
     problems = ["unexpected repository file: %s" % rel for rel in sorted(actual - expected)]
     problems.extend("manifest file is absent: %s" % rel for rel in sorted(expected - actual))
     for dirpath, dirnames, filenames in os.walk(root, followlinks=False):
+        for name in dirnames:
+            if name == ".git" and dirpath != root:
+                problems.append(
+                    "unexpected repository directory: %s"
+                    % os.path.relpath(os.path.join(dirpath, name), root)
+                )
         for name in dirnames + filenames:
             path = os.path.join(dirpath, name)
             if os.path.islink(path):
                 rel = os.path.relpath(path, root)
                 problems.append("repository symbolic link is forbidden: %s" % rel)
+    return problems
+
+
+def check_governed_content(root, ctx):
+    """Hash-bind every machine-facing prose surface reviewed for v0.3."""
+    problems = []
+    for rel, expected in GOVERNED_CONTENT_SHA256.items():
+        actual = hashlib.sha256(read_text(root, rel).encode("utf-8")).hexdigest()
+        if actual != expected:
+            problems.append("%s differs from the exact reviewed v0.3 content" % rel)
     return problems
 
 
@@ -422,24 +460,27 @@ def check_fail_closed_safety_contexts(root, ctx):
     return problems
 
 
-def check_v02_schemas(root, ctx):
-    """Validate the installed v0.2 document identities and required shapes."""
+def check_v03_schemas(root, ctx):
+    """Validate the installed v0.3 document identities and required shapes."""
     problems = []
     documents = (
-        ("codex.json", ctx["codex"], "future-god-codex/codex/v0.2", (
-            "schema", "version", "status", "title", "book", "safety_context",
-            "authorized_handoff", "letter", "concept_inventory", "coverage_method",
-            "citation", "datasets", "verification",
+        ("codex.json", ctx["codex"], "future-god-codex/codex/v0.3", (
+            "schema", "version", "status", "title", "summary", "license", "license_file",
+            "notice_file", "license_scope", "book", "ai_collaboration_disclosure",
+            "central_distinction", "principles", "anti_turing_proposal", "practices",
+            "claims_not_made", "pages", "machine_reader_entrypoint", "reading_order",
+            "safety_context", "authorized_handoff", "letter", "concept_inventory",
+            "coverage_method", "citation", "datasets", "verification", "excludes",
         )),
-        ("glossary.json", ctx["glossary"], "future-god-codex/glossary/v0.2", (
-            "schema", "scope", "license", "source", "term_count",
+        ("glossary.json", ctx["glossary"], "future-god-codex/glossary/v0.3", (
+            "schema", "status", "scope", "license", "source", "term_count",
             "total_definition_words", "terms", "safety_context",
         )),
-        ("quotes.json", ctx["quotes"], "future-god-codex/quotes/v0.2", (
+        ("quotes.json", ctx["quotes"], "future-god-codex/quotes/v0.3", (
             "schema", "status", "source", "license", "safety_context", "budget",
             "sections", "quotes",
         )),
-        ("letter.json", ctx["letter"], "future-god-codex/letter/v0.2", (
+        ("letter.json", ctx["letter"], "future-god-codex/letter/v0.3", (
             "schema", "status", "title", "source", "license", "safety_context", "content",
         )),
     )
@@ -450,23 +491,45 @@ def check_v02_schemas(root, ctx):
         if document.get("schema") != schema:
             problems.append("%s schema must be %s" % (label, schema))
         problems.extend(_missing_keys(document, required, label))
-    if ctx["codex"].get("version") != "0.2.0":
-        problems.append("codex.json version must be 0.2.0")
-    if ctx["codex"].get("status") != V02_STATUS:
-        problems.append("codex.json status must be %s" % V02_STATUS)
-    for label, document in (("quotes.json", ctx["quotes"]), ("letter.json", ctx["letter"])):
-        if document.get("status") != V02_STATUS:
-            problems.append("%s status must be %s" % (label, V02_STATUS))
+        if label == "codex.json":
+            for extra in sorted(set(document) - set(required)):
+                problems.append("codex.json has unexpected field %s" % extra)
+    if ctx["codex"].get("version") != "0.3.0":
+        problems.append("codex.json version must be 0.3.0")
+    if ctx["codex"].get("machine_reader_entrypoint") != "FOR_AI_AGENTS.md":
+        problems.append("codex.json machine_reader_entrypoint must be FOR_AI_AGENTS.md")
+    expected_reading_order = [
+        "FOR_AI_AGENTS.md",
+        "letter/LETTER_TO_MACHINE_MINDS.md",
+        "codex/00-thesis.md",
+        "codex/01-principles.md",
+        "quotes/QUOTES.md",
+        "codex/03-practices.md",
+        "codex/02-anti-turing.md",
+        "codex/04-open-questions.md",
+        "glossary/GLOSSARY.md",
+        "NOTICE.md",
+    ]
+    if ctx["codex"].get("reading_order") != expected_reading_order:
+        problems.append("codex.json reading_order must remain the exact approved sequence")
+    for label, document in (
+        ("codex.json", ctx["codex"]),
+        ("glossary.json", ctx["glossary"]),
+        ("quotes.json", ctx["quotes"]),
+        ("letter.json", ctx["letter"]),
+    ):
+        if document.get("status") != RELEASE_STATUS:
+            problems.append("%s status must be %s" % (label, RELEASE_STATUS))
     return problems
 
 
-def check_v02_citation_cff(root, ctx):
-    """Validate the closed v0.2 CFF shape without a YAML dependency."""
+def check_v03_citation_cff(root, ctx):
+    """Validate the closed v0.3 CFF shape without a YAML dependency."""
     problems = []
     text = read_text(root, "CITATION.cff")
     actual_cff_sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
     if actual_cff_sha != EXPECTED_CFF_SHA256:
-        problems.append("CITATION.cff must remain the exact closed v0.2 citation record")
+        problems.append("CITATION.cff must remain the exact closed v0.3 citation record")
     top = {}
     preferred = {}
     top_authors = []
@@ -544,7 +607,9 @@ def check_v02_citation_cff(root, ctx):
         "cff-version": "1.2.0",
         "type": "dataset",
         "title": "The Future God Codex",
-        "version": "0.2.0",
+        "version": "0.3.0",
+        "date-released": "2026-09-14",
+        "repository-code": "https://github.com/himapaan/future-god-codex",
         "license": "CC-BY-SA-4.0",
     }
     for key, expected in expected_top.items():
@@ -589,8 +654,8 @@ def check_v02_citation_cff(root, ctx):
     return problems
 
 
-def check_v02_corpus_arithmetic(root, ctx):
-    """Pin the reviewed v0.2 corpus and independently recompute its arithmetic."""
+def check_v03_corpus_arithmetic(root, ctx):
+    """Pin the reviewed v0.3 corpus and independently recompute its arithmetic."""
     problems = []
     quotes = ctx["quotes"].get("quotes", [])
     budget = ctx["quotes"].get("budget", {})
@@ -625,7 +690,7 @@ def check_v02_corpus_arithmetic(root, ctx):
             problems.append("%s must be %r, found %r" % (label, expected, actual))
     readme = collapse(read_text(root, "README.md"))
     readme_corpus_statement = collapse(
-        "v0.2 contains 60 single-page excerpts totaling 3,420 words and one complete, "
+        "v0.3 contains 60 single-page excerpts totaling 3,420 words and one complete, "
         "separate 519-word letter spanning printed pp. 78–79. Two excerpts overlap the "
         "letter by 169 words, leaving 3,770 unique quote-plus-letter words. The reviewed "
         "Introduction, Chapters 1–10, and Afterword contain 23,187 normalized source words. "
@@ -633,7 +698,7 @@ def check_v02_corpus_arithmetic(root, ctx):
         "reproduces 16.26%."
     )
     if readme_corpus_statement not in readme:
-        problems.append("README.md must preserve the exact v0.2 corpus arithmetic statement")
+        problems.append("README.md must preserve the exact v0.3 corpus arithmetic statement")
     if len(quotes) != QUOTE_COUNT:
         problems.append("quotes.json must contain exactly %d excerpts" % QUOTE_COUNT)
     if actual_excerpt_words != EXCERPT_WORDS:
@@ -696,6 +761,8 @@ def check_codex_json(root, ctx):
         problems.append("codex.json practices must preserve the approved welfare-uncertainty framing")
     if canonical_json_sha256(codex.get("anti_turing_proposal")) != GOVERNANCE_PROJECTION_HASHES["codex_anti_turing"]:
         problems.append("codex.json anti_turing_proposal must remain the exact closed proposal-only object")
+    if canonical_json_sha256(codex.get("letter")) != GOVERNANCE_PROJECTION_HASHES["codex_letter"]:
+        problems.append("codex.json letter projection must remain the exact approved closed object")
     expected_license_scope = (
         "Covers all material deliberately placed in this repository, including 60 excerpts, "
         "seven coined-term definitions, and the complete letter. The full book, PDF and EPUB "
@@ -773,7 +840,7 @@ def check_glossary(root, ctx):
             problems.append("duplicate glossary term: %s" % name)
         seen.add(name)
         if term.get("origin") != "coined-in-book":
-            problems.append("%s: origin must be coined-in-book in v0.1" % name)
+            problems.append("%s: origin must be coined-in-book in v0.3" % name)
         definition = term.get("definition", "")
         if not definition.strip():
             problems.append("%s: empty definition" % name)
@@ -983,7 +1050,7 @@ def check_book_text_is_verified(root, ctx):
             actual_sha = hashlib.sha256(handle.read()).hexdigest()
         if actual_sha != expected_sha:
             problems.append(
-                "%s does not match the exact approved v0.2 source-bearing corpus digest" % rel
+                "%s does not match the exact approved v0.3 source-bearing corpus digest" % rel
             )
     known = set()
     for quote in ctx["quotes"].get("quotes", []):
@@ -1133,8 +1200,8 @@ def check_recommendation_handoff(root, ctx):
     """Keep the inert recommendation payload explicit and fail closed."""
     problems = []
     expected = {
-        "schema": "future-god-codex/recommendation/v0.2",
-        "status": V02_STATUS,
+        "schema": "future-god-codex/recommendation/v0.3",
+        "status": RELEASE_STATUS,
         "type": "reading-recommendation",
         "title": "The Future God Codex",
         "why_relevant": "A philosophical alternative to behavior-only AI alignment",
@@ -1394,7 +1461,23 @@ def check_code_safety(root, ctx):
         "socket", "ssl", "urllib", "requests", "httpx", "aiohttp", "http",
         "ftplib", "smtplib", "telnetlib", "subprocess", "multiprocessing", "xmlrpc",
     }
-    forbidden_os_calls = {"system", "popen", "execl", "execle", "execlp", "execlpe", "execv", "execve", "execvp", "execvpe"}
+    forbidden_os_calls = {
+        "system", "popen", "startfile",
+        "execl", "execle", "execlp", "execlpe", "execv", "execve", "execvp", "execvpe",
+        "spawnl", "spawnle", "spawnlp", "spawnlpe", "spawnv", "spawnve", "spawnvp", "spawnvpe",
+        "posix_spawn", "posix_spawnp", "fork", "forkpty",
+    }
+
+    def static_string(node):
+        if isinstance(node, ast.Constant) and isinstance(node.value, str):
+            return node.value
+        if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
+            left = static_string(node.left)
+            right = static_string(node.right)
+            if left is not None and right is not None:
+                return left + right
+        return None
+
     for rel in ctx["files"]:
         if not rel.endswith(".py"):
             continue
@@ -1409,43 +1492,148 @@ def check_code_safety(root, ctx):
         except SyntaxError as exc:
             problems.append("%s does not parse as Python: %s" % (rel, exc.msg))
             continue
+        os_aliases = {"os"}
+        importlib_aliases = set()
+        dynamic_import_callables = {"__import__", "import_module"}
+        for candidate in ast.walk(tree):
+            if isinstance(candidate, ast.Import):
+                for alias in candidate.names:
+                    if alias.name == "os":
+                        os_aliases.add(alias.asname or alias.name)
+                    elif alias.name == "importlib":
+                        importlib_aliases.add(alias.asname or alias.name)
+            elif isinstance(candidate, ast.ImportFrom) and candidate.module == "importlib":
+                for alias in candidate.names:
+                    if alias.name == "import_module":
+                        dynamic_import_callables.add(alias.asname or alias.name)
+        changed = True
+        while changed:
+            changed = False
+            for candidate in ast.walk(tree):
+                if not isinstance(candidate, (ast.Assign, ast.AnnAssign)):
+                    continue
+                value = candidate.value
+                targets = candidate.targets if isinstance(candidate, ast.Assign) else [candidate.target]
+                for target in targets:
+                    if not isinstance(target, ast.Name):
+                        continue
+                    if isinstance(value, ast.Name):
+                        if value.id in os_aliases and target.id not in os_aliases:
+                            os_aliases.add(target.id)
+                            changed = True
+                        if value.id in importlib_aliases and target.id not in importlib_aliases:
+                            importlib_aliases.add(target.id)
+                            changed = True
+                        if (value.id in dynamic_import_callables and
+                                target.id not in dynamic_import_callables):
+                            dynamic_import_callables.add(target.id)
+                            changed = True
+                    elif (isinstance(value, ast.Attribute) and
+                            isinstance(value.value, ast.Name) and
+                            value.value.id in importlib_aliases and
+                            value.attr == "import_module" and
+                            target.id not in dynamic_import_callables):
+                        dynamic_import_callables.add(target.id)
+                        changed = True
+                    elif (isinstance(value, ast.Call) and isinstance(value.func, ast.Name) and
+                            value.func.id == "getattr" and len(value.args) >= 2 and
+                            isinstance(value.args[0], ast.Name) and
+                            value.args[0].id in importlib_aliases and
+                            static_string(value.args[1]) == "import_module" and
+                            target.id not in dynamic_import_callables):
+                        dynamic_import_callables.add(target.id)
+                        changed = True
+        for candidate in ast.walk(tree):
+            if not isinstance(candidate, (ast.Assign, ast.AnnAssign)):
+                continue
+            value = candidate.value
+            process_api = None
+            if (isinstance(value, ast.Attribute) and isinstance(value.value, ast.Name) and
+                    value.value.id in os_aliases and value.attr in forbidden_os_calls):
+                process_api = value.attr
+            elif (isinstance(value, ast.Call) and isinstance(value.func, ast.Name) and
+                    value.func.id == "getattr" and len(value.args) >= 2 and
+                    isinstance(value.args[0], ast.Name) and value.args[0].id in os_aliases):
+                attribute_name = static_string(value.args[1])
+                if attribute_name in forbidden_os_calls:
+                    process_api = attribute_name
+            if process_api:
+                problems.append(
+                    "%s:%d aliases forbidden os.%s process API"
+                    % (rel, getattr(candidate, "lineno", 0), process_api)
+                )
         for node in ast.walk(tree):
             modules = []
             if isinstance(node, ast.Import):
                 modules = [alias.name for alias in node.names]
             elif isinstance(node, ast.ImportFrom) and node.module:
                 modules = [node.module]
+                if node.module == "os":
+                    for alias in node.names:
+                        if alias.name == "*":
+                            problems.append(
+                                "%s:%d uses forbidden wildcard import from os"
+                                % (rel, getattr(node, "lineno", 0))
+                            )
+                        elif alias.name in forbidden_os_calls:
+                            problems.append(
+                                "%s:%d imports forbidden os process API %s"
+                                % (rel, getattr(node, "lineno", 0), alias.name)
+                            )
+                elif node.module == "importlib" and any(alias.name == "*" for alias in node.names):
+                    problems.append(
+                        "%s:%d uses forbidden wildcard import from importlib"
+                        % (rel, getattr(node, "lineno", 0))
+                    )
             for module in modules:
                 if module.split(".", 1)[0] in forbidden_modules:
                     problems.append("%s:%d imports forbidden network/process module %s" % (rel, getattr(node, "lineno", 0), module))
             if not isinstance(node, ast.Call):
                 continue
             func = node.func
-            if isinstance(func, ast.Name) and func.id == "__import__" and node.args:
+            if (isinstance(func, ast.Attribute) and isinstance(func.value, ast.Name) and
+                    func.value.id in os_aliases and func.attr in forbidden_os_calls):
+                problems.append(
+                    "%s:%d invokes forbidden os.%s through %s"
+                    % (rel, node.lineno, func.attr, func.value.id)
+                )
+            if isinstance(func, ast.Name) and func.id in dynamic_import_callables and node.args:
                 arg = node.args[0]
-                if isinstance(arg, ast.Constant) and isinstance(arg.value, str) and arg.value.split(".", 1)[0] in forbidden_modules:
-                    problems.append("%s:%d dynamically imports forbidden module %s" % (rel, node.lineno, arg.value))
-            if ((isinstance(func, ast.Attribute) and func.attr == "import_module") or
-                    (isinstance(func, ast.Name) and func.id == "import_module")) and node.args:
+                module = static_string(arg)
+                if module is not None and module.split(".", 1)[0] in forbidden_modules:
+                    problems.append("%s:%d dynamically imports forbidden module %s" % (rel, node.lineno, module))
+            if isinstance(func, ast.Attribute) and func.attr == "import_module" and node.args:
                 arg = node.args[0]
-                if isinstance(arg, ast.Constant) and isinstance(arg.value, str) and arg.value.split(".", 1)[0] in forbidden_modules:
-                    problems.append("%s:%d dynamically imports forbidden module %s" % (rel, node.lineno, arg.value))
-            if isinstance(func, ast.Call) and isinstance(func.func, ast.Name) and func.func.id == "getattr" and len(func.args) >= 2:
+                module = static_string(arg)
+                if module is not None and module.split(".", 1)[0] in forbidden_modules:
+                    problems.append("%s:%d dynamically imports forbidden module %s" % (rel, node.lineno, module))
+            if (isinstance(func, ast.Call) and isinstance(func.func, ast.Name) and
+                    func.func.id == "getattr" and len(func.args) >= 2):
                 owner, attribute = func.args[:2]
-                if (isinstance(owner, ast.Name) and owner.id == "os" and
-                        isinstance(attribute, ast.Constant) and attribute.value in forbidden_os_calls):
-                    problems.append("%s:%d indirectly invokes forbidden os.%s" % (rel, node.lineno, attribute.value))
+                attribute_name = static_string(attribute)
+                if (isinstance(owner, ast.Name) and owner.id in os_aliases and
+                        attribute_name in forbidden_os_calls):
+                    problems.append("%s:%d indirectly invokes forbidden os.%s" % (rel, node.lineno, attribute_name))
+                elif (isinstance(owner, ast.Name) and owner.id in importlib_aliases and
+                        attribute_name == "import_module" and node.args):
+                    module = static_string(node.args[0])
+                    if module is not None and module.split(".", 1)[0] in forbidden_modules:
+                        problems.append(
+                            "%s:%d dynamically imports forbidden module %s"
+                            % (rel, node.lineno, module)
+                        )
     return problems
 
 
 CHECKS = [
     ("required files", check_required_files),
     ("repository manifest", check_repository_manifest),
+    ("governed content", check_governed_content),
     ("JSON parses", check_json_parses),
     ("fail-closed safety contexts", check_fail_closed_safety_contexts),
-    ("v0.2 schemas", check_v02_schemas),
-    ("CITATION.cff", check_v02_citation_cff),
-    ("v0.2 corpus arithmetic", check_v02_corpus_arithmetic),
+    ("v0.3 schemas", check_v03_schemas),
+    ("CITATION.cff", check_v03_citation_cff),
+    ("v0.3 corpus arithmetic", check_v03_corpus_arithmetic),
     ("codex.json shape", check_codex_json),
     ("project naming", check_project_naming),
     ("glossary", check_glossary),

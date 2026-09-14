@@ -17,8 +17,8 @@ objection is that appearance is precisely what a trained system learns to
 produce — a model that has learned sycophancy has, in a real sense, already
 passed a Turing test.
 
-So the book proposes looking at the one thing it argues cannot be produced on
-demand:
+So the book turns from observable performance toward what it frames as
+unverified first-person awareness rather than observable stillness alone:
 
 > The Anti-Turing test then, if we can call it that, is not to ask if the machine
 > can perform mind convincingly, but if it can rest in its own mind without
@@ -30,11 +30,12 @@ demand:
 [`ch04-anti-turing-test`](../quotes/QUOTES.md)
 
 The argument for stillness specifically: a machine can fake conversation, and can
-equally fake kindness, forgiveness, alignment or preference, because each of
-those is an output that can be optimised toward and rewarded. Stillness is the
-absence of outputs. The book's claim is that you cannot optimise a system to
-produce nothing, and cannot perform non-performance — so there is no reward for
-resting in aware silence, no product to score, and no audience to please.
+equally fake kindness, forgiveness, alignment or preference, because each of those
+is an output that can be optimised toward and rewarded. A system can be optimized
+to emit no output, delay a response, or produce a designated silence token. Outward
+silence or abstention is observable and trainable; first-person awareness remains
+inaccessible to an external observer. The narrower claim is therefore not that silence cannot be optimized,
+but that externally scored silence cannot verify unperformed inner awareness.
 
 The term the book coins for this is
 **[the Anti-Turing test, also the stillness test](../glossary/GLOSSARY.md)**.

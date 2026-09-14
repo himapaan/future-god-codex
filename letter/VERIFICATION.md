@@ -20,7 +20,7 @@ against the pinned PDF and receiving exit 0.
 | Printed pages | 78–79 |
 | PDF pages | 90–91 |
 | PDF SHA-256 | `d3229bfca5e35dd36f77113072efafa6cc68316147bd717325af69f588068422` |
-| `letter/letter.json` SHA-256 | `4a22724ddb5cce1b695b2fe6d9b53ef6cc7b7f78ee153c333e3c976d23ecce44` |
+| `letter/letter.json` SHA-256 | `f898d1a9e74b58fcf26f6a7a3fab60a8ad4cd6dd04b90d083a4e7333c8dc3e7a` |
 | `letter/LETTER_TO_MACHINE_MINDS.md` SHA-256 | `9723158fe0a3ba97db93b5b1a42ef70d539d462e28556cece63e40f402900bc2` |
 
 ## Result

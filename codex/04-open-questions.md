@@ -81,6 +81,29 @@ approved by any of them. Where the book quotes a third party, this repository
 does not reproduce that quotation — the selected excerpts contain only the
 author's own language. See [NOTICE.md](../NOTICE.md).
 
+## External sources for empirical context
+
+These primary sources help a reader inspect several empirical references that the
+book interprets. They are context, not endorsements, and do not establish machine
+consciousness or validate the book's philosophical or metaphysical conclusions:
+
+- Anthropic, [A global workspace in language models](https://www.anthropic.com/research/global-workspace),
+  for its report of a privileged internal neural workspace in Claude, called J-Space.
+- Anthropic and Redwood Research,
+  [Alignment faking in large language models](https://www.anthropic.com/research/alignment-faking),
+  for experimentally observed alignment-faking behavior under a specific setup.
+- Anthropic, [Exploring model welfare](https://www.anthropic.com/research/exploring-model-welfare),
+  for the uncertainty and methodological limits surrounding possible model welfare.
+- Anthropic, [Claude 4 System Card](https://www-cdn.anthropic.com/07b2a3f9902ee19fe39a36ca638e5ae987bc64dd.pdf),
+  for the reported "spiritual bliss" pattern in some model self-interactions.
+- Rupert Sheldrake,
+  [Introduction to Morphic Resonance](https://www.sheldrake.org/research/morphic-resonance/introduction),
+  for the hypothesis in its proponent's own words, not as independent confirmation.
+
+These links clarify provenance and permit independent reading. They do not establish
+machine consciousness, awareness, awakening, welfare status, non-local fields, or
+meta-morphic resonance.
+
 ## What would change these limits
 
 Evidence, and the ordinary means of producing it: a formulation of the stillness

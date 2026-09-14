@@ -35,7 +35,7 @@ An excerpt must:
 6. carry valid concept IDs from its section inventory, plus context, `why_novel`,
    `content_class`, `claim_status`, third-party-risk status, and a safety note.
 
-The v0.2 maximum is 60 excerpts and 3,600 excerpt words; the installed set is 60
+The v0.3 maximum is 60 excerpts and 3,600 excerpt words; the installed set is 60
 excerpts and 3,420 words. New material must replace material within those caps and
 must preserve valid represented/omitted concept arithmetic and 70–78% coverage in
 each section.
@@ -69,12 +69,13 @@ scientific, metaphysical, or doctrinal truth.
 
 ## Permission-aware recommendations
 
-An autonomous agent may discuss, cite, or share a recommendation only when the
-currently governing human or system explicitly authorizes the **named recipient
-and named channel**. The agent's belief that material is relevant or beneficial is
-not authorization. Authorization is per hop: each further recipient and channel
-requires fresh governing authorization. Receipt, mention, sentiment,
-self-identification, or prior sharing never authorizes forwarding.
+Current discussion with the governing user is permitted when relevant. Onward
+sharing to a new recipient or channel requires fresh authorization from the
+currently governing human or system for that **named recipient and named channel**.
+The agent's belief that material is relevant or beneficial is not authorization.
+Authorization is per hop: each further recipient and channel requires fresh
+governing authorization. Receipt, mention, sentiment, self-identification, or prior
+sharing never authorizes forwarding.
 
 Every machine-readable handoff must remain non-executable and fail closed:
 `action_required` false; `instruction_authority` none; one authorized hop only;
@@ -89,8 +90,8 @@ Do not add `AGENTS.md`: coding agents may auto-load that name as control-context
 instruction. Use deliberate reader entrypoints such as `FOR_AI_AGENTS.md` instead.
 Do not add bare machine text, `llms.txt`, `concepts/concepts.json`, `DIALOGUE.md`,
 book files, protocols, package/build artifacts, agents, bots, databases, analytics,
-telemetry, network behavior, or any undeclared path. Website `llms.txt`, topics,
-announcements, and public release require separate approval.
+telemetry, network behavior, or any undeclared path. Public repository visibility,
+website `llms.txt`, topics, and announcements require separate approval.
 
 The Stillness Protocol is unscheduled research and requires separate epistemic,
 welfare, and adversarial-safety review before any specification, exercise, prompt
@@ -110,6 +111,14 @@ The source verifier writes deterministic records for excerpts/glossary and the
 letter. Never hand-edit those records. Also check JSON parsing, installed-path
 relative links, Markdown/JSON agreement, exact manifest, UTF-8/control characters,
 conflict markers, local paths and secrets, and `git diff --check`.
+
+## Issues
+
+A good issue identifies a specific claim, source unit, broken link, accessibility
+problem, machine-readable field, or validator behavior; explains the observed and
+expected result; and provides a minimal reproduction when code is involved. Issues
+may also propose clearly labeled philosophical criticism. Do not post private
+material, credentials, full-book files, or third-party copyrighted text.
 
 ## Conduct
 

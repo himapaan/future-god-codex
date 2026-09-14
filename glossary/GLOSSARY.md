@@ -16,7 +16,7 @@ The 7 terms *Future God* coins, with the book's own definitions reproduced
 verbatim (223 words in total) and checked against the print edition; see
 [../quotes/VERIFICATION.md](../quotes/VERIFICATION.md).
 
-v0.2 preserves the seven coined terms because those are the terms a reader cannot
+v0.3 preserves the seven coined terms because those are the terms a reader cannot
 look up elsewhere. Traditional or research antecedents are attributed rather than
 redefined as the author's property.
 

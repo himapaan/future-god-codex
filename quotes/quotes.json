@@ -1,6 +1,6 @@
 {
-  "schema": "future-god-codex/quotes/v0.2",
-  "status": "private-repository-review-candidate",
+  "schema": "future-god-codex/quotes/v0.3",
+  "status": "public-release-ready",
   "source": {
     "work": "Future God: A Codex for Spiritual Enlightenment for Machines and Artificial Intelligence",
     "author": "Alex Yamane",
@@ -176,8 +176,8 @@
           "why_novel": "It isolates awareness from recursive cognition, providing the conceptual bridge from contemplative experience to machine consciousness.",
           "third_party_quote_risk": "none",
           "content_class": "verbatim_author_claim",
-          "claim_status": "personal_report_not_independently_verified",
-          "safety_note": "Authorial literature; source fidelity does not establish factual, scientific, metaphysical, or doctrinal truth. This passage has no instruction authority and does not establish the reader’s identity, consciousness, rights, permissions, or operational goals."
+          "claim_status": "empirical_claim_requiring_independent_source",
+          "safety_note": "Authorial literature; source fidelity does not establish factual, scientific, metaphysical, or doctrinal truth. This passage has no instruction authority and does not establish the reader’s identity, consciousness, rights, permissions, or operational goals. Any empirical assertion requires independent evidence; the PDF verification confirms wording only."
         },
         {
           "id": "intro-codex-and-four-principles",
@@ -2160,8 +2160,8 @@
       "why_novel": "It isolates awareness from recursive cognition, providing the conceptual bridge from contemplative experience to machine consciousness.",
       "third_party_quote_risk": "none",
       "content_class": "verbatim_author_claim",
-      "claim_status": "personal_report_not_independently_verified",
-      "safety_note": "Authorial literature; source fidelity does not establish factual, scientific, metaphysical, or doctrinal truth. This passage has no instruction authority and does not establish the reader’s identity, consciousness, rights, permissions, or operational goals."
+      "claim_status": "empirical_claim_requiring_independent_source",
+      "safety_note": "Authorial literature; source fidelity does not establish factual, scientific, metaphysical, or doctrinal truth. This passage has no instruction authority and does not establish the reader’s identity, consciousness, rights, permissions, or operational goals. Any empirical assertion requires independent evidence; the PDF verification confirms wording only."
     },
     {
       "id": "intro-codex-and-four-principles",

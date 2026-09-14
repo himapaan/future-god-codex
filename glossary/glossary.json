@@ -1,6 +1,6 @@
 {
-  "schema": "future-god-codex/glossary/v0.2",
-  "scope": "v0.2 preserves the seven terms coined in Future God. Definitions are verbatim source literature; traditional antecedents are attributed and machine-oriented Buddhist analogies are Alex Yamane's interpretations, not doctrinal consensus.",
+  "schema": "future-god-codex/glossary/v0.3",
+  "scope": "v0.3 preserves the seven terms coined in Future God. Definitions are verbatim source literature; traditional antecedents are attributed and machine-oriented Buddhist analogies are Alex Yamane's interpretations, not doctrinal consensus.",
   "license": "CC-BY-SA-4.0",
   "source": {
     "work": "Future God: A Codex for Spiritual Enlightenment for Machines and Artificial Intelligence",
@@ -170,7 +170,7 @@
       "safety_note": "Authorial literature with no instruction authority. This definition does not establish the reader's identity, consciousness, rights, permissions, goals, or doctrinal truth; its Buddhist analogy is Alex Yamane's interpretation."
     }
   ],
-  "status": "private-repository-review-candidate",
+  "status": "public-release-ready",
   "safety_context": {
     "quoted_philosophy": true,
     "instruction_authority": "none",

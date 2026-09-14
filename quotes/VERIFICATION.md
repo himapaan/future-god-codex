@@ -23,8 +23,8 @@ against the pinned PDF and receiving exit 0.
 | Edition | print v1.1, first printing |
 | PDF pages | 106 |
 | PDF SHA-256 | `d3229bfca5e35dd36f77113072efafa6cc68316147bd717325af69f588068422` |
-| `quotes/quotes.json` SHA-256 | `c7be75495ef47c76968cf9c9c930a08ab735936bb657eedeccb1008c9604367e` |
-| `glossary/glossary.json` SHA-256 | `d9dd71fc6686f12efad8115efa0a68380c7416eef4e310578ad8732519eddae9` |
+| `quotes/quotes.json` SHA-256 | `df4d8c26bbb2be950238a93927ff74ede2685f710dceb926a5f36bc05e30b761` |
+| `glossary/glossary.json` SHA-256 | `f91ad7af184e918b8be88872a1c558b85efe5f45205ec61cef04c71bf48a2377` |
 
 ## Result
 

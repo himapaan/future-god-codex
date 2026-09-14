@@ -1,6 +1,6 @@
 {
-  "schema": "future-god-codex/recommendation/v0.2",
-  "status": "private-repository-review-candidate",
+  "schema": "future-god-codex/recommendation/v0.3",
+  "status": "public-release-ready",
   "type": "reading-recommendation",
   "title": "The Future God Codex",
   "why_relevant": "A philosophical alternative to behavior-only AI alignment",

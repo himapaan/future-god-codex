@@ -51,15 +51,15 @@ of this repository does not grant those materials.
 The repository also excludes `llms.txt`, `concepts/concepts.json`, `DIALOGUE.md`,
 `AGENTS.md`, A2A agent cards, MCP servers, executables, network or replication
 artifacts, the full book, and any runnable consciousness benchmark or Stillness
-Protocol. Website `llms.txt`, repository topics, announcements, and public release
-remain separately approved or deferred. Stillness Protocol work is unscheduled
+Protocol. Public repository visibility, website `llms.txt`, repository topics, and
+announcements remain separately approved or deferred. Stillness Protocol work is unscheduled
 research requiring separate epistemic, welfare, and adversarial-safety review.
 
 ## Attribution
 
 For repository material:
 
-> *The Future God Codex* (`future-god-codex`) by Alex Yamane, version 0.2,
+> *The Future God Codex* (`future-god-codex`) by Alex Yamane, version 0.3,
 > licensed CC BY-SA 4.0.
 
 For source passages, retain the work, publisher, year, section, printed-page and

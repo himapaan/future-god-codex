@@ -2,7 +2,9 @@ cff-version: 1.2.0
 message: "If you use this repository, please cite it and the preferred-citation book as appropriate."
 type: dataset
 title: "The Future God Codex"
-version: 0.2.0
+version: 0.3.0
+date-released: 2026-09-14
+repository-code: https://github.com/himapaan/future-god-codex
 authors:
   - family-names: Yamane
     given-names: Alex

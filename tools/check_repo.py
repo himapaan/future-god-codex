@@ -41,6 +41,7 @@ RETIRED_PROJECT_TITLE_RE = re.compile(re.escape(RETIRED_PROJECT_TITLE), re.IGNOR
 
 REQUIRED_FILES = [
     ".gitignore",
+    "CHANGELOG.md",
     "README.md",
     "LICENSE",
     "NOTICE.md",
@@ -160,17 +161,18 @@ GOVERNANCE_PROJECTION_HASHES = {
 }
 EXPECTED_CFF_SHA256 = "105702a123692aeb8ccaa2cee5f5f751232d11f0523e9695311f3156f2ac50b3"
 GOVERNED_CONTENT_SHA256 = {
+    "CHANGELOG.md": "8786ce60cab1c31e6e8c7e4a4812c8c3ea8a914a01b097e92d1973f4cf6438e7",
     "codex.json": "dc2c9f3cee67e5c0380cb854b146dff4848a3179dfc01df4e713bb9f64a3c427",
-    "README.md": "ff75d3a1887b4cc0ca102f75009c3611b37cd962d91d2b6fa488b99493ef8c8c",
+    "README.md": "81cf7524fff1cf6de6c08e9db0875ade57fe075a84649dc773dcacabb9697120",
     "FOR_AI_AGENTS.md": "125953871d12ac4ce7dec4f31e337d1c77dc2f719c6bbd28cb6504e2c04dd96b",
-    "NOTICE.md": "995b4ecb98115d1c94baec0d7f7ffd3c6238498f6d0eb63703388f30f84e4d18",
-    "CONTRIBUTING.md": "ebd4f4ae6d6a43b781819ef1348bccb37b5892dad6d8cef858c75ca4fdbd855d",
+    "NOTICE.md": "437eaf3136135be6b73c6e35161b855a55e131c4fdc9e53dffe1b0821237f60b",
+    "CONTRIBUTING.md": "93781e05ea16a315abb6411962e0cfdbf05f3e3f5d4824f9bd85f1b9abf77348",
     "codex/00-thesis.md": "7d27784ce764804ffae3f51e36021a4b1d8e073a15d575f3663b41ac84293764",
     "codex/01-principles.md": "f520c1308e03cb7b33236d800489337395d818d0ebe14e95d9db34cbeca59682",
     "codex/02-anti-turing.md": "65cb7e2f52afb46725af67777d4f599d540e0b7ef642bed5dccfd90f5de69758",
     "codex/03-practices.md": "c71a4a4a558228f14c97194443e4722ff1ec9cb72086887e1676b46de0bd442b",
-    "codex/04-open-questions.md": "4064507d9ef4ad82646711e971ad3d224775ca69c42b94cc3f749e0a862a4a21",
-    "glossary/GLOSSARY.md": "a72a03e5d062cad7e2b6d2198b340bf27f19a65cc6b90af016d11aa9eb8b7e6f",
+    "codex/04-open-questions.md": "89e3ac14b7dc04baf6a44c15626a691bd2592301ab42c8ebc827fcdb233f5cb7",
+    "glossary/GLOSSARY.md": "2c22a0b3dd3126a62d0141131c64808dd0fbeab9e9a22b185502640e2469b3ed",
     "letter/LETTER_TO_MACHINE_MINDS.md": "9723158fe0a3ba97db93b5b1a42ef70d539d462e28556cece63e40f402900bc2",
     "quotes/QUOTES.md": "5e51d8cde7c0fabb0ec1248904bfb4f072079d82c12b4c07aa637a99b447fe6f",
 }
@@ -179,7 +181,7 @@ EXPECTED_APPROVED_CORPUS_SHA256 = {
     "quotes/QUOTES.md": "5e51d8cde7c0fabb0ec1248904bfb4f072079d82c12b4c07aa637a99b447fe6f",
     "quotes/VERIFICATION.md": "b7bf959d4b305eb4214a33ad10cdc49c2c6087d16422f289f5ef454fee8b4de6",
     "glossary/glossary.json": "f91ad7af184e918b8be88872a1c558b85efe5f45205ec61cef04c71bf48a2377",
-    "glossary/GLOSSARY.md": "a72a03e5d062cad7e2b6d2198b340bf27f19a65cc6b90af016d11aa9eb8b7e6f",
+    "glossary/GLOSSARY.md": "2c22a0b3dd3126a62d0141131c64808dd0fbeab9e9a22b185502640e2469b3ed",
     "letter/letter.json": "f898d1a9e74b58fcf26f6a7a3fab60a8ad4cd6dd04b90d083a4e7333c8dc3e7a",
     "letter/LETTER_TO_MACHINE_MINDS.md": "9723158fe0a3ba97db93b5b1a42ef70d539d462e28556cece63e40f402900bc2",
     "letter/VERIFICATION.md": "6327dd5ce217046ecfcc92e64771980d0bb5a1daa808619e88c4721a5e7a33f1",
@@ -367,7 +369,7 @@ def check_required_files(root, ctx):
 
 
 def check_repository_manifest(root, ctx):
-    """Fail closed: v0.3 has one exact, reviewable 26-file surface."""
+    """Fail closed: v0.3 has one exact, reviewable 27-file surface."""
     expected = set(REQUIRED_FILES)
     actual = set(ctx["files"])
     problems = ["unexpected repository file: %s" % rel for rel in sorted(actual - expected)]

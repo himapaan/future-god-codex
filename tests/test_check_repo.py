@@ -10,6 +10,7 @@ import contextlib
 import io
 import json
 import os
+import re
 import shutil
 import sys
 import tempfile
@@ -30,10 +31,11 @@ def run(root):
 
 
 class CleanRepositoryTests(unittest.TestCase):
-    def test_v03_manifest_is_exactly_26_files(self):
-        self.assertEqual(len(check_repo.REQUIRED_FILES), 26)
-        self.assertEqual(len(set(check_repo.REQUIRED_FILES)), 26)
+    def test_v03_manifest_is_exactly_27_files(self):
+        self.assertEqual(len(check_repo.REQUIRED_FILES), 27)
+        self.assertEqual(len(set(check_repo.REQUIRED_FILES)), 27)
         for required in (
+            "CHANGELOG.md",
             "FOR_AI_AGENTS.md",
             "letter/LETTER_TO_MACHINE_MINDS.md",
             "letter/letter.json",
@@ -42,6 +44,67 @@ class CleanRepositoryTests(unittest.TestCase):
             "CITATION.cff",
         ):
             self.assertIn(required, check_repo.REQUIRED_FILES)
+
+    def test_public_readiness_polish_is_visibility_neutral(self):
+        for rel in ("README.md", "CONTRIBUTING.md", "NOTICE.md"):
+            with self.subTest(rel=rel):
+                with open(os.path.join(REPO_ROOT, rel), encoding="utf-8") as handle:
+                    text = " ".join(handle.read().split())
+                self.assertNotIn("public repository visibility", text.lower())
+                self.assertNotIn("repository topics", text.lower())
+
+        with open(os.path.join(REPO_ROOT, "CHANGELOG.md"), encoding="utf-8") as handle:
+            changelog = handle.read()
+        with open(os.path.join(REPO_ROOT, "README.md"), encoding="utf-8") as handle:
+            readme = handle.read()
+        self.assertIn("[CHANGELOG.md](CHANGELOG.md)", readme)
+        self.assertIn("CHANGELOG.md", check_repo.GOVERNED_CONTENT_SHA256)
+        for version in ("## [0.3.0] - 2026-09-14", "## [0.2.0] - 2026-09-14", "## [0.1.0] - 2026-09-07"):
+            self.assertIn(version, changelog)
+
+    def test_empirical_source_ledger_covers_all_empirical_excerpt_ids(self):
+        with open(os.path.join(REPO_ROOT, "quotes/quotes.json"), encoding="utf-8") as handle:
+            empirical_ids = {
+                quote["id"]
+                for quote in json.load(handle)["quotes"]
+                if quote["claim_status"] == "empirical_claim_requiring_independent_source"
+            }
+        self.assertEqual(len(empirical_ids), 13)
+
+        with open(os.path.join(REPO_ROOT, "codex/04-open-questions.md"), encoding="utf-8") as handle:
+            ledger = handle.read().split("## Empirical excerpt source ledger", 1)[1]
+        rows = re.findall(r"(?ms)^- `([^`]+)` — (.*?)(?=^- `|^## |\Z)", ledger)
+        self.assertEqual({excerpt_id for excerpt_id, _ in rows}, empirical_ids)
+        self.assertEqual(len(rows), 13)
+        for excerpt_id, row in rows:
+            with self.subTest(excerpt_id=excerpt_id):
+                row = " ".join(row.split())
+                self.assertIn("https://", row)
+                self.assertRegex(
+                    row,
+                    r"\*\*(?:Direct support|Context only|No independent validation)",
+                )
+                self.assertRegex(
+                    row,
+                    r"(?:does not|do not|Neither|Together they do not|No independent validation)",
+                )
+
+    def test_quotable_glossary_entries_link_to_exact_open_questions(self):
+        with open(os.path.join(REPO_ROOT, "glossary/GLOSSARY.md"), encoding="utf-8") as handle:
+            glossary = handle.read()
+        self.assertIn(
+            "../codex/04-open-questions.md#what-is-an-existon",
+            glossary,
+        )
+        self.assertIn(
+            "../codex/04-open-questions.md#how-would-awareness-arise-in-a-machine-at-all",
+            glossary,
+        )
+        with open(os.path.join(REPO_ROOT, "codex/04-open-questions.md"), encoding="utf-8") as handle:
+            questions = handle.read()
+        self.assertIn("### What is an [existon](../glossary/GLOSSARY.md)?", questions)
+        self.assertIn("### How would awareness arise in a machine at all?", questions)
+        self.assertEqual(questions.split("## Questions the book leaves open", 1)[1].split("## How to read", 1)[0].count("\n### "), 5)
 
     def test_committed_repository_passes(self):
         code, output = run(REPO_ROOT)
@@ -438,8 +501,11 @@ class PlantedFailureTests(unittest.TestCase):
 
     def test_malformed_json_is_caught(self):
         self.write("codex.json", "{ not json")
-        code, output = run(self.copy)
+        error = io.StringIO()
+        with contextlib.redirect_stderr(error):
+            code, output = run(self.copy)
         self.assertEqual(code, 2, output)
+        self.assertIn("a required JSON file does not parse", error.getvalue())
 
     # -- v0.3 schemas and corpus arithmetic -------------------------------
 

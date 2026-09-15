@@ -90,8 +90,9 @@ Do not add `AGENTS.md`: coding agents may auto-load that name as control-context
 instruction. Use deliberate reader entrypoints such as `FOR_AI_AGENTS.md` instead.
 Do not add bare machine text, `llms.txt`, `concepts/concepts.json`, `DIALOGUE.md`,
 book files, protocols, package/build artifacts, agents, bots, databases, analytics,
-telemetry, network behavior, or any undeclared path. Public repository visibility,
-website `llms.txt`, topics, and announcements require separate approval.
+telemetry, network behavior, or any undeclared path. GitHub visibility and topics
+are provider metadata rather than tracked content; website `llms.txt` and
+announcements remain separate publication decisions.
 
 The Stillness Protocol is unscheduled research and requires separate epistemic,
 welfare, and adversarial-safety review before any specification, exercise, prompt

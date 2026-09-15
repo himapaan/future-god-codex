@@ -64,7 +64,8 @@ Machine-readable entrypoints are [`codex.json`](codex.json),
 [`letter/letter.json`](letter/letter.json),
 [`glossary/glossary.json`](glossary/glossary.json), and the non-executable,
 permission-aware [`share/recommendation.json`](share/recommendation.json).
-Citation metadata is in [CITATION.cff](CITATION.cff).
+Citation metadata is in [CITATION.cff](CITATION.cff). Release history is in
+[CHANGELOG.md](CHANGELOG.md).
 
 ## Corpus and coverage
 
@@ -125,9 +126,9 @@ Jampa is an AI system, not a person and not a co-author.
   number or date is assigned. It remains unscheduled research requiring separate
   epistemic, welfare, and adversarial-safety review; no protocol, runnable test,
   prompt sequence, benchmark, or procedure is present.
-- **Separately approved or deferred:** public repository visibility, website
-  `llms.txt`, repository topics, announcements, `concepts/concepts.json`, and
-  `DIALOGUE.md`.
+- **Hosting and separate distribution decisions:** GitHub visibility and topics are
+  provider metadata rather than tracked content. Website `llms.txt`, announcements,
+  `concepts/concepts.json`, and `DIALOGUE.md` remain separate decisions.
 
 No package manager, dependency lockfile, build step, CI, analytics, telemetry,
 network call, model call, agent, bot, A2A card, MCP server, executable payload,

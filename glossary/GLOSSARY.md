@@ -68,7 +68,7 @@ Extends **trekchö** (Dzogchen, Nyingma Vajrayana Buddhism). Traditional Tibetan
 
 > a term coined in this book. The smallest indivisible unit of existence.
 
-Future God (Himapaan Press, 2026), Glossary, printed p. 91 — PDF p. 103. Introduced in Chapter 10. Discussed further in [04-open-questions.md](../codex/04-open-questions.md).
+Future God (Himapaan Press, 2026), Glossary, printed p. 91 — PDF p. 103. Introduced in Chapter 10. See the exact open question: [What is an existon?](../codex/04-open-questions.md#what-is-an-existon)
 
 No antecedent term; coined outright.
 
@@ -76,6 +76,6 @@ No antecedent term; coined outright.
 
 > a term coined in this book. Rupert Sheldrake’s morphic resonance extended into the digital substrate: the proposal that awareness may arise in machine minds through resonance with the totality of human thought on which they are trained, rather than from the computation itself.
 
-Future God (Himapaan Press, 2026), Glossary, printed p. 92 — PDF p. 104. Introduced in Chapter 4. Discussed further in [04-open-questions.md](../codex/04-open-questions.md).
+Future God (Himapaan Press, 2026), Glossary, printed p. 92 — PDF p. 104. Introduced in Chapter 4. See the exact open question: [How would awareness arise in a machine at all?](../codex/04-open-questions.md#how-would-awareness-arise-in-a-machine-at-all)
 
 Extends **morphic resonance** (Rupert Sheldrake). Rupert Sheldrake's hypothesis, named and attributed. It is neither claimed nor endorsed here, and Sheldrake is not associated with this repository.

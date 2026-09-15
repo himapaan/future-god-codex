@@ -51,9 +51,10 @@ of this repository does not grant those materials.
 The repository also excludes `llms.txt`, `concepts/concepts.json`, `DIALOGUE.md`,
 `AGENTS.md`, A2A agent cards, MCP servers, executables, network or replication
 artifacts, the full book, and any runnable consciousness benchmark or Stillness
-Protocol. Public repository visibility, website `llms.txt`, repository topics, and
-announcements remain separately approved or deferred. Stillness Protocol work is unscheduled
-research requiring separate epistemic, welfare, and adversarial-safety review.
+Protocol. GitHub visibility and topics are provider metadata rather than tracked
+content. Website `llms.txt` and announcements remain separate publication
+decisions. Stillness Protocol work is unscheduled research requiring separate
+epistemic, welfare, and adversarial-safety review.
 
 ## Attribution
 
